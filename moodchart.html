@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <title>LonLi</title>
+  </head>
+  <body>
+    <header>
+      <img src=""/>
+      <h2>Welcome To...</h2>
+      <h1>lonli</h1>
+      <h3>You Are Not Alone</h3>
+    </header>
+    <nav>
+      <ul id="navbar">
+        <li><a href="#">Forum</a></li>
+        <li><a href="#">Mood Chart</a></li>
+        <li><a href="#">Resources</a></li>
+      </ul>
+    </nav>
+    <main>
+      <form id="mood-form">
+        <h1>How are you today?</h1>
+        <label for="mood">Rate your mood:</label>
+        <input type="radio" name="mood" value="1">1</input>
+        <input type="radio" name="mood" value="2">2</input>
+        <input type="radio" name="mood" value="3">3</input>
+        <input type="radio" name="mood" value="4">4</input>
+        <input type="radio" name="mood" value="5">5</input>
+
+        <label for="exercise">Did you exercise today?</label>
+        <input type="radio" name="exercise" value="yes">yes</input>
+        <input type="radio" name="exercise" value="no">no</input>
+
+        <label for="sleep">Having trouble sleeping?</label>
+        <input type="radio" name="sleep" value="yes">yes</input>
+        <input type="radio" name="sleep" value="no">no</input>
+
+        <label for="weather">What was the weather like?</label>
+        <select multiple id="weather">
+          <option value="sunny">Sunny</option>
+          <option value="cloudy">Cloudy</option>
+          <option value="rainy">Rainy</option>
+          <option value="snowy">Snowy</option>
+          <option value="cold">Cold</option>
+          <option value="hot">Hot</option>
+        </select>
+
+        <label for="eat">Did you eat healthy?</label>
+        <input type="radio" name="eat" value="yes">yes</input>
+        <input type="radio" name="eat" value="no">no</input>
+
+        <label for="meds">Are you taking medication?</label>
+        <input type="radio" name="meds" value="yes">yes</input>
+        <input type="radio" name="meds" value="no">no</input>
+
+        <label for="drugs">Did you drink or use drugs?</label>
+        <input type="radio" name="drugs" value="yes">yes</input>
+        <input type="radio" name="drugs" value="no">no</input>
+
+        <button type="submit"></button>
+      </form>
+      <div id="moodchart">
+      </div>
+    </main>
+  </body>
+</html>

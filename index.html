@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <title>LonLi</title>
+  </head>
+  <body>
+    <header>
+      <img src=""/>
+      <h2>Welcome To...</h2>
+      <h1>lonli</h1>
+      <h3>You Are Not Alone</h3>
+    </header>
+    <nav>
+      <ul id="navbar">
+        <li><a href="#">Forum</a></li>
+        <li><a href="#">Mood Chart</a></li>
+        <li><a href="#">Resources</a></li>
+      </ul>
+    </nav>
+    <main>
+      <form id="new-post">
+        <h1>Need to get something off your chest?</h1>
+        <label for="username">Username:</label>
+        <input type="text" name="username"></input>
+        <label for="title">Post Title:</label>
+        <input type="text" name="title"></input>
+        <label for="category">Category:</label>
+        <select id="category">
+          <option value="" disabled selected>Select a category</option>
+          <option value="general">General</option>
+          <option value="depression">Depression</option>
+          <option value="anxiety">Anxiety</option>
+          <option value="therapy">Therapy</option>
+          <option value="medication">Medication</option>
+          <option value="selfharm">Self Harm</option>
+        </select>
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" value="female">F</input>
+        <input type="radio" name="gender" value="male">M</input>
+        <input type="radio" name="gender" value="other" checked>Other</input>
+        <label for="post">Post:</label>
+        <textarea name="post" rows="8" cols="40"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <form id="reply">
+        <label for="username">Username:</label>
+        <input type="text" name="username"></input>
+        <label for="reply">Reply:</label>
+        <textarea name="reply" rows="8" cols="40"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <section id="forum">
+        <h1>Have advice to give, or an ear to lend?</h1>
+        <label for="filter">Filter:</label>
+        <select id="filter">
+          <option value="" disabled selected>Select a category</option>
+          <option value="general">General</option>
+          <option value="depression">Depression</option>
+          <option value="anxiety">Anxiety</option>
+          <option value="therapy">Therapy</option>
+          <option value="medication">Medication</option>
+          <option value="selfharm">Self Harm</option>
+          <option value="female">Female</option>
+          <option value="male">Male</option>
+          <option value="other">Other Gender</option>
+        </select>
+        <div id="entries">
+
+        </div>
+        <button type="click">Load More</button>
+      </section>
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
