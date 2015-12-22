@@ -53,72 +53,75 @@ moodView.makeChart = function() {
     datasets: [
       {
         label: 'Mood',
-        fillColor: 'rgba(220,220,220,0.2)',
-        strokeColor: 'rgba(220,220,220,1)',
-        pointColor: 'rgba(220,220,220,1)',
+        // fillColor need to be darkest
+        fillColor: 'rgba(124,80,20,0.7)',
+        strokeColor: 'rgba(124,80,20,1)',
+        pointColor: 'rgba(124,80,20,1)',
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
-        pointHighlightStroke: 'rgba(220,220,220,1)',
+        pointHighlightStroke: 'rgba(124,80,20,1)',
         data: moodView.tempMoodArray
       },
       {
         label: 'Exercise',
-        fillColor: 'rgba(220,220,220,0.2)',
-        strokeColor: 'rgba(220,220,220,1)',
-        pointColor: 'rgba(220,220,220,1)',
+        fillColor: 'rgba(220,220,220,0)',
+        strokeColor: 'rgba(220,220,220,0)',
+        pointColor: 'rgba(220,220,220,0)',
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
-        pointHighlightStroke: 'rgba(220,220,220,1)',
+        pointHighlightStroke: 'rgba(220,220,220,0)',
         data: moodView.tempExerciseArray
       },
       {
         label: 'Sleep',
-        fillColor: 'rgba(220,220,220,0.2)',
-        strokeColor: 'rgba(220,220,220,1)',
-        pointColor: 'rgba(220,220,220,1)',
+        // fillColor need to be 2nd darkest
+        fillColor: 'rgba(25,25,87,0.3)',
+        strokeColor: 'rgba(25,25,87,1)',
+        pointColor: 'rgba(25,25,87,1)',
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
-        pointHighlightStroke: 'rgba(220,220,220,1)',
+        pointHighlightStroke: 'rgba(25,25,87,1)',
         data: moodView.tempSleepArray
       },
       {
         label: 'Weather',
-        fillColor: 'rgba(220,220,220,0.2)',
-        strokeColor: 'rgba(220,220,220,1)',
-        pointColor: 'rgba(220,220,220,1)',
+        // fillColor need to be lightest
+        fillColor: 'rgba(124,115,20,0.2)',
+        strokeColor: 'rgba(124,115,20,1)',
+        pointColor: 'rgba(124,115,20,1)',
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
-        pointHighlightStroke: 'rgba(220,220,220,1)',
+        pointHighlightStroke: 'rgba(124,115,20,1)',
         data: moodView.tempWeatherArray
       },
       {
         label: 'Ate well',
-        fillColor: 'rgba(220,220,220,0.2)',
-        strokeColor: 'rgba(220,220,220,1)',
-        pointColor: 'rgba(220,220,220,1)',
+        fillColor: 'rgba(220,220,220,0)',
+        strokeColor: 'rgba(220,220,220,0)',
+        pointColor: 'rgba(220,220,220,0)',
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
-        pointHighlightStroke: 'rgba(220,220,220,1)',
+        pointHighlightStroke: 'rgba(220,220,220,0)',
         data: moodView.tempEatArray
       },
       {
         label: 'Taken meds',
-        fillColor: 'rgba(220,220,220,0.2)',
-        strokeColor: 'rgba(220,220,220,1)',
-        pointColor: 'rgba(220,220,220,1)',
+        fillColor: 'rgba(220,220,220,0)',
+        strokeColor: 'rgba(220,220,220,0)',
+        pointColor: 'rgba(220,220,220,0)',
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
-        pointHighlightStroke: 'rgba(220,220,220,1)',
+        pointHighlightStroke: 'rgba(220,220,220,0)',
         data: moodView.tempMedsArray
       },
       {
         label: 'Taken Drugs',
-        fillColor: 'rgba(220,220,220,0.2)',
-        strokeColor: 'rgba(220,220,220,1)',
-        pointColor: 'rgba(220,220,220,1)',
+        fillColor: 'rgba(220,220,220,0)',
+        strokeColor: 'rgba(220,220,220,0)',
+        pointColor: 'rgba(220,220,220,0)',
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
-        pointHighlightStroke: 'rgba(220,220,220,1)',
+        pointHighlightStroke: 'rgba(220,220,220,0)',
         data: moodView.tempDrugsArray
       }
     ]
@@ -133,5 +136,5 @@ moodView.makeChart = function() {
 // Controller
 $(function() {
   moodView.makeChart();
-  
+
 });

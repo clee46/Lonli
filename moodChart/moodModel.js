@@ -30,6 +30,8 @@ moodData.loadData = function() {
 moodData.getData = function() {
   $('#moodSubmit').on('click', function(e) {
     e.preventDefault();
+    // add time check here if we get to it
+    $('#preview-text').remove();
     moodData.rating = $('input[name="mood"]:checked').val();
     moodData.exercise = $('input[name="exercise"]:checked').val();
     moodData.sleep = $('input[name="sleep"]:checked').val();

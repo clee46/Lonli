@@ -25,30 +25,30 @@
     <main>
       <form id="mood-form">
         <h1>How are you today?</h1>
-        <label for="mood">Rate your mood:</label>
-        <input type="radio" name="mood" value="1">1</input>
-        <input type="radio" name="mood" value="2">2</input>
-        <input type="radio" name="mood" value="3">3</input>
-        <input type="radio" name="mood" value="4">4</input>
-        <input type="radio" name="mood" value="5">5</input>
+        <label for="mood">Rate your mood:</label><br />
+        <input type="radio" name="mood" value="1">I feel really bad(1)</input>
+        <input type="radio" name="mood" value="2">I'm a bit down(2)</input>
+        <input type="radio" name="mood" value="3">I feel okay(3)</input>
+        <input type="radio" name="mood" value="4">I feel good!(4)</input>
+        <input type="radio" name="mood" value="5">I feel Great!!(5)</input><br />
 
-        <label for="exercise">Did you exercise today?</label>
-        <input type="radio" name="exercise" value="5">yes</input>
-        <input type="radio" name="exercise" value="1">no</input>
+        <label for="exercise">Did you exercise today?</label><br />
+        <input type="radio" name="exercise" value="5">yes(5)</input>
+        <input type="radio" name="exercise" value="1">no(1)</input><br />
 
-        <label for="mood">How many hours did you sleep last night?:</label>
-        <input type="radio" name="sleep" value="1">less than 6</input>
-        <input type="radio" name="sleep" value="2">6-7</input>
-        <input type="radio" name="sleep" value="3">7-8</input>
-        <input type="radio" name="sleep" value="4">8-9</input>
-        <input type="radio" name="sleep" value="5">More than 9</input>
+        <label for="mood">How many hours did you sleep last night?:</label><br />
+        <input type="radio" name="sleep" value="1">less than 6 hours(1)</input>
+        <input type="radio" name="sleep" value="2">6-7 hours(2)</input>
+        <input type="radio" name="sleep" value="3">7-8 hours(3)</input>
+        <input type="radio" name="sleep" value="4">8-9 hours(4)</input>
+        <input type="radio" name="sleep" value="5">More than 9 hours(5)</input><br />
 
-        <label for="weather">How sunny was it today?:</label>
-        <input type="radio" name="weather" value="1">Really gloomy</input>
-        <input type="radio" name="weather" value="2">Cloudy</input>
-        <input type="radio" name="weather" value="3">A bit overcast</input>
-        <input type="radio" name="weather" value="4">Kinda sunny</input>
-        <input type="radio" name="weather" value="5">Really sunny</input>
+        <label for="weather">How sunny was it today?:</label><br />
+        <input type="radio" name="weather" value="1">Really gloomy(1)</input>
+        <input type="radio" name="weather" value="2">Cloudy(2)</input>
+        <input type="radio" name="weather" value="3">A bit overcast(3)</input>
+        <input type="radio" name="weather" value="4">Kinda sunny(4)</input>
+        <input type="radio" name="weather" value="5">Really sunny(5)</input><br />
 
         <!-- <label for="weather">What was the weather like?</label>
         <select multiple id="weather">
@@ -60,22 +60,24 @@
           <option value="hot">Hot</option>
         </select> -->
 
-        <label for="eat">Did you eat healthy?</label>
-        <input type="radio" name="eat" value="5">yes</input>
-        <input type="radio" name="eat" value="1">no</input>
+        <label for="eat">Did you eat healthy?</label><br />
+        <input type="radio" name="eat" value="5">yes(5)</input>
+        <input type="radio" name="eat" value="1">no(1)</input><br />
 
-        <label for="meds">Are you taking medication?</label>
-        <input type="radio" name="meds" value="5">yes</input>
-        <input type="radio" name="meds" value="1">no</input>
+        <label for="meds">Are you taking medication?</label><br />
+        <input type="radio" name="meds" value="5">yes(5)</input>
+        <input type="radio" name="meds" value="1">no(1)</input><br />
 
-        <label for="drugs">Did you drink or use drugs?</label>
-        <input type="radio" name="drugs" value="5">yes</input>
-        <input type="radio" name="drugs" value="1">no</input>
+        <label for="drugs">Did you drink or use drugs?</label><br />
+        <input type="radio" name="drugs" value="5">yes(5)</input>
+        <input type="radio" name="drugs" value="1">no(1)</input><br />
 
         <button id="moodSubmit" type="submit">Submit</button>
       </form>
-      <canvas id="moodChart">
-      </canvas>
+      <p id="preview-text">Preview</p>
+      <!-- <section>Legend: 5 = yes, 1 = no</section> -->
+      <!-- <canvas id="moodChart">
+      </canvas> -->
     </main>
     <script src="moodModel.js"></script>
     <script src="moodView.js"></script>
