@@ -8,17 +8,16 @@ postsView.getTemplate = function() {
 postsView.show = function(post) {
   var html = postsView.postTemplate(post);
   $('#entries').prepend(html);
-  postsView.replyHandler();
+  // postsView.replyHandler();
 };
 postsView.replyHandler = function() {
   // clicking on title hides other posts, shows reply form/back button/post replies
   repliesView.getTemplate();
   $('.title').click(function(event) {
     event.preventDefault();
-    var id = $(this).siblings('.postNum').text();
-    $(this).parent().attr('id', 'activePost');
-    repliesView.showReplies(id);
-    Reply.newReply(id);
+//    $(this).parent().attr('id', 'activePost');
+    // repliesView.showReplies(id);
+    Reply.newReply();
 
     $('#new-reply').show();
     $('#new-post').hide();
