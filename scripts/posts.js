@@ -1,12 +1,14 @@
 var forumData = new Firebase('https://brilliant-fire-1757.firebaseio.com/');
+var postList = [];
 
 function Post (opts) {
   Object.keys(opts).forEach(function(e,index,keys) {
     this[e] = opts[e];
   },this);
-  // this.body = opts.body || marked(this.markdown);
+  this.id = postList.length + 1;
+  postList.push(this);
 }
-Post.storePost = function() {
+Post.newPost = function() {
   $('#new-post').on('submit', function(e) {
     e.preventDefault();
     var newPost = new Post({
@@ -21,16 +23,22 @@ Post.storePost = function() {
     var postString = JSON.stringify(newPost);
     forumData.push(postString);
     postsView.show(newPost);
-    // postsView.reply();
   });
 };
-
+Post.pullPost = function() {
+  postList = [];    // reset the postList
+  $('#entries').empty();
+  forumData.once('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var temp = new Post(JSON.parse(childSnapshot.val()));
+      postsView.show(temp);
+    });
+  });
+};
 $(function() {
-  $('#new-reply').hide();
-  $('#back').hide();
-  postsView.getTemplate();
-  Reply.getTemplate();
-  postsView.pullPost();
-  Post.storePost();
-  // postsView.reply();
+  $('#new-reply').hide();   // hide reply forum
+  $('#back').hide();        // hide back button
+  postsView.getTemplate();  // get post template
+  Post.pullPost();          // fetch most recent forum data from firebase
+  Post.newPost();
 });
