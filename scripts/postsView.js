@@ -5,9 +5,11 @@ postsView.getTemplate = function() {
     postsView.postTemplate = Handlebars.compile(data);
   });
 };
-postsView.show = function(post) {
+postsView.show = function(post,uid) {
+  // $().attr('id', uid)
   var html = postsView.postTemplate(post);
   $('#entries').prepend(html);
+  $('#entries article:first-child').attr('id',uid);
   // postsView.replyHandler();
 };
 postsView.replyHandler = function() {
@@ -17,7 +19,8 @@ postsView.replyHandler = function() {
     event.preventDefault();
 //    $(this).parent().attr('id', 'activePost');
     // repliesView.showReplies(id);
-    Reply.newReply();
+    var uid = $(this).parent().attr('id');
+    Reply.newReply(uid);
 
     $('#new-reply').show();
     $('#new-post').hide();
