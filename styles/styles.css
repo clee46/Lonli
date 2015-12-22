@@ -6,17 +6,51 @@ header {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-bottom: 45%;
-  margin-top: -20px;
+  padding-bottom: 20px;
+  margin-top: -40px;
   margin-left: -8px;
   margin-right: -8px;
+}
+
+header h2 {
+  font-family: Raleway;
+  font-size: 30px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding-top: 30px;
+  margin-left: 2%;
+  letter-spacing: .1em;
+}
+
+header h1 {
+  font-family: Dancing Script;
+  font-size: 150px;
+  color: white;
+  text-transform: lowercase;
+  border: 5px solid white;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: inline-block;
+  margin-left: 10%;
+}
+
+header h3 {
+  font-family: Raleway;
+  font-size: 30px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 300;
+  padding-top: 30px;
+  margin-left: 2%;
+  letter-spacing: .1em;
 }
 
 nav ul{
   list-style: none;
   margin: 0 2px;
   padding: 0;
-  display: flex;
+  display: block;
   justify-content: space-around;
   text-transform: uppercase;
   font-family: Raleway;
@@ -33,6 +67,10 @@ nav {
   background-color: white;
 }
 
+nav li {
+  padding-bottom: 10px;
+}
+
 main {
   padding-top: 1%;
   background-color: #e7e7e7;
@@ -42,7 +80,145 @@ main {
 
 #new-post {
   background: #2A9D8F;
-  width: 95%;
+  width: 90%;
   margin: 0 auto;
   margin-top: 10%;
+  border-radius: 9px 9px 9px 9px;
+  -moz-border-radius: 9px 9px 9px 9px;
+  -webkit-border-radius: 9px 9px 9px 9px;
+  border: none;
+  padding: 15px;
+}
+
+#new-post h1 {
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#new-post label {
+  display: block;
+  line-height: 2em;
+  font-family: Raleway;
+  font-weight: 300;
+  color: white;
+  text-transform: lowercase;
+}
+
+#new-post button {
+  display: block;
+  margin-top: 15px;
+  border: none;
+  background-color: #BADA55;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  color: white;
+  text-transform: uppercase;
+  padding: 7px;
+  font-size: 15px;
+  font-family: Raleway;
+  font-weight: 300;
+}
+
+#new-post input {
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  line-height: 20px;
+  border: none;
+}
+
+#new-post input[type="text"] {
+  width: 60%;
+}
+
+#new-post select {
+  font-size: 15px;
+  text-transform: uppercase;
+  border: none;
+}
+
+#new-post label[for="female"] {
+  display: inline;
+  padding-right: 10px;
+  text-transform: uppercase;
+}
+
+#new-post label[for="male"] {
+  display: inline;
+  padding-right: 10px;
+  text-transform: uppercase;
+}
+
+#new-post label[for="other"] {
+  display: inline;
+  text-transform: uppercase;
+}
+
+#new-post textarea {
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border: none;
+}
+
+@media (min-width: 500px) {
+  header h2 {
+    font-family: Raleway;
+    font-size: 45px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-top: 30px;
+    margin-left: 35%;
+    letter-spacing: .1em;
+  }
+
+  header h1 {
+    font-family: Dancing Script;
+    font-size: 150px;
+    color: white;
+    text-transform: lowercase;
+    border: 5px solid white;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: inline-block;
+    margin-left: 15%;
+  }
+
+  header h3 {
+    font-family: Raleway;
+    font-size: 45px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding-top: 30px;
+    margin-left: 2%;
+    letter-spacing: .1em;
+  }
+
+  nav ul{
+    list-style: none;
+    margin: 0 2px;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-family: Raleway;
+    font-size: 24px;
+    padding: 15px 0px;
+  }
+
+  nav ul a {
+    text-decoration: none;
+    color: black;
+  }
+
+  nav {
+    background-color: white;
+  }
+
 }
