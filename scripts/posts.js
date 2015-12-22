@@ -22,7 +22,8 @@ Post.newPost = function() {
     });
     var postString = JSON.stringify(newPost);
     forumData.push(postString);
-    postsView.show(newPost);
+    // postsView.show(newPost);
+    Post.pullPost();
   });
 };
 Post.pullPost = function() {
@@ -30,8 +31,9 @@ Post.pullPost = function() {
   $('#entries').empty();
   forumData.once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
+      var uid = childSnapshot.key();
       var temp = new Post(JSON.parse(childSnapshot.val()));
-      postsView.show(temp);
+      postsView.show(temp, uid);
     });
   });
 };
@@ -39,6 +41,8 @@ $(function() {
   $('#new-reply').hide();   // hide reply forum
   $('#back').hide();        // hide back button
   postsView.getTemplate();  // get post template
+  repliesView.getTemplate();
   Post.pullPost();          // fetch most recent forum data from firebase
   Post.newPost();
+  // postsView.replyHandler();
 });

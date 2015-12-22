@@ -5,13 +5,13 @@ repliesView.getTemplate = function() {
     repliesView.replyTemplate = Handlebars.compile(data);
   });
 };
-repliesView.showReplies = function(id) {
-  $('.postedReplies').show().empty();
-  postList[id-1].replies.forEach(function(reply) {
-    $('#activePost .postedReplies').append(repliesView.replyTemplate(reply));
-  });
+repliesView.showReplies = function(id, uid) {
+  $('#' + uid + ' .postedReplies').show();
+  // postList[id-1].replies.forEach(function(reply) {
+  //   $('#' + uid + ' .postedReplies').append(repliesView.replyTemplate(reply));
+  // });
 };
-repliesView.showReply = function(reply,id) {
+repliesView.showReply = function(reply,id, uid) {
   var html = repliesView.replyTemplate(reply);
-  $('#activePost').append(html);
+  $('#' + uid + ' .postedReplies').append(html);
 };
