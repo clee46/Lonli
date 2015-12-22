@@ -38,7 +38,4 @@ moodData.getData = function() {
   });
 };
 
-
-
-
 moodData.getData();
