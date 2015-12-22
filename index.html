@@ -6,6 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
     <title>LonLi</title>
   </head>
   <body>
@@ -26,9 +27,9 @@
       <form id="new-post">
         <h1>Need to get something off your chest?</h1>
         <label for="username">Username:</label>
-        <input type="text" name="username"></input>
+        <input id="author" type="text" name="username"></input>
         <label for="title">Post Title:</label>
-        <input type="text" name="title"></input>
+        <input id="title" type="text" name="title"></input>
         <label for="category">Category:</label>
         <select id="category">
           <option value="" disabled selected>Select a category</option>
@@ -44,10 +45,10 @@
         <input type="radio" name="gender" value="male">M</input>
         <input type="radio" name="gender" value="other" checked>Other</input>
         <label for="post">Post:</label>
-        <textarea name="post" rows="8" cols="40"></textarea>
+        <textarea id="body" name="post" rows="8" cols="40"></textarea>
         <button type="submit">Submit</button>
       </form>
-      <form id="reply">
+      <form id="new-reply">
         <label for="username">Username:</label>
         <input type="text" name="username"></input>
         <label for="reply">Reply:</label>
@@ -69,25 +70,15 @@
           <option value="male">Male</option>
           <option value="other">Other Gender</option>
         </select>
+        <button id="back">Back</button>
         <div id="entries">
-
         </div>
         <button type="click">Load More</button>
       </section>
-
-
-
     </main>
-
-
-
-
-
-
-
-
-
-
-
+    <script src="scripts/posts.js"></script>
+    <script src="scripts/replies.js"></script>
+    <script src="scripts/postsView.js"></script>
+    <!-- <script src="scripts/index.js"></script> -->
   </body>
 </html>
