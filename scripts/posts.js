@@ -37,5 +37,6 @@ $(function() {
   Post.newPost();
   $('#entries').empty();
   forumData.on('value', Post.handleValueChange);
+  repliesView.getTemplate();
   // postsView.replyHandler();
 });

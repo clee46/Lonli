@@ -12,7 +12,8 @@ Reply.newReply = function() {
       body: $('#replyBody').val(),
       date: new Date(e.timeStamp),
     });
-    $("#new-reply")[0].reset();
+    $('#new-reply')[0].reset();
+    
     // postList[id-1].replies.push(newReply);
     // repliesView.showReply(newReply, id-1);
     // var data = JSON.stringify(postList[id-1]);
