@@ -33,12 +33,15 @@
         <input type="radio" name="mood" value="5">5</input>
 
         <label for="exercise">Did you exercise today?</label>
-        <input type="radio" name="exercise" value="yes">yes</input>
-        <input type="radio" name="exercise" value="no">no</input>
+        <input type="radio" name="exercise" value="true">yes</input>
+        <input type="radio" name="exercise" value="false">no</input>
 
-        <label for="sleep">Having trouble sleeping?</label>
-        <input type="radio" name="sleep" value="yes">yes</input>
-        <input type="radio" name="sleep" value="no">no</input>
+        <label for="mood">How many hours did you sleep last night?:</label>
+        <input type="radio" name="sleep" value="1">less than 6</input>
+        <input type="radio" name="sleep" value="2">6-7</input>
+        <input type="radio" name="sleep" value="3">7-8</input>
+        <input type="radio" name="sleep" value="4">8-9</input>
+        <input type="radio" name="sleep" value="5">More than 9</input>
 
         <label for="weather">What was the weather like?</label>
         <select multiple id="weather">
@@ -62,10 +65,12 @@
         <input type="radio" name="drugs" value="yes">yes</input>
         <input type="radio" name="drugs" value="no">no</input>
 
-        <button type="submit"></button>
+        <button id="moodSubmit" type="submit">Submit</button>
       </form>
-      <div id="moodchart">
-      </div>
+      <canvas id="moodChart">
+      </canvas>
     </main>
+    <script src="moodModel.js"></script>
+    <script src="moodView.js"></script>
   </body>
 </html>
