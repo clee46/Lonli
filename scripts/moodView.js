@@ -11,7 +11,7 @@ moodView.tempDrugsArray = [];
 moodView.makeChart = function() {
   //Needed to stop chart flickering
   $('canvas').remove();
-  $('main').append($('<canvas>').attr('id', 'moodChart'));
+  $('#mood-tab').append($('<canvas>').attr('id', 'moodChart'));
   //Here to grab mood rating
   moodDataArray.forEach(function(item) {
     var val = item.rating;
@@ -134,7 +134,7 @@ moodView.makeChart = function() {
   Chart.defaults.global.multiTooltipTemplate = '<%= datasetLabel %> - <%= value %>';
 };
 // Controller
-$(function() {
-  moodView.makeChart();
-
-});
+// $(function() {
+//   moodView.makeChart();
+//
+// });

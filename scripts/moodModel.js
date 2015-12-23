@@ -51,5 +51,5 @@ moodData.getData = function() {
   });
 };
 // Controller
-moodData.loadData();
-moodData.getData();
+// moodData.loadData();
+// moodData.getData();

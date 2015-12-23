@@ -1,5 +1,7 @@
-$(function() {
-  $('.box').hide();
+var resourcesView = {};
+
+resourcesView.filterHandler = function() {
+  // $('.box').hide();
   $('select').change(function() {
     $(this).find('option:selected').each(function() {
       if($(this).attr('value')=='depression') {
@@ -26,6 +28,9 @@ $(function() {
         $('.box').not('.community').hide();
         $('.community').show();
       }
+      else if($(this).attr('value')=='all') {
+        $('.box').show();
+      }
     });
   });
-});
+};
