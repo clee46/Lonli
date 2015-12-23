@@ -99,12 +99,13 @@ main {
 }
 
 #new-post label {
-  display: block;
+  display: inline-block;
   line-height: 2em;
   font-family: Raleway;
   font-weight: 300;
   color: white;
   text-transform: lowercase;
+  width: 40%;
 }
 
 #new-post button {
@@ -121,6 +122,7 @@ main {
   font-size: 15px;
   font-family: Raleway;
   font-weight: 300;
+  width: 15%;
 }
 
 #new-post input {
@@ -128,7 +130,9 @@ main {
   -moz-border-radius: 4px 4px 4px 4px;
   -webkit-border-radius: 4px 4px 4px 4px;
   line-height: 20px;
+  width: 10%;
   border: none;
+  display: block;
 }
 
 #new-post input[type="text"] {
@@ -139,26 +143,14 @@ main {
   font-size: 15px;
   text-transform: uppercase;
   border: none;
+  display: block;
 }
 
-#new-post label[for="female"] {
-  display: inline;
-  padding-right: 10px;
-  text-transform: uppercase;
-}
-
-#new-post label[for="male"] {
-  display: inline;
-  padding-right: 10px;
-  text-transform: uppercase;
-}
-
-#new-post label[for="other"] {
-  display: inline;
-  text-transform: uppercase;
-}
 
 #new-post textarea {
+  clear:both;
+  float:right;
+  margin-top: -192px;
   border-radius: 4px 4px 4px 4px;
   -moz-border-radius: 4px 4px 4px 4px;
   -webkit-border-radius: 4px 4px 4px 4px;
@@ -289,6 +281,35 @@ main {
   }
 
   #new-post textarea {
+    clear:both;
+    float:right;
+    margin-top: -192px;
+  }
+
+  #new-post label[for="post"] {
+    display: block;
+  }
+  #radiobuttons {
+    width: 35%;
+  }
+
+  #radiobuttons input[type="radio"] {
+    display: inline-block;
+    width: 10%;
+  }
+
+  #radiobuttons label {
+    display: inline-block;
+    width: 10%;
+  }
+
+  #radiobuttons label[for="gender"] {
+    display: block;
+    width: 15%;
+  }
+
+  #new-post label[for="post"] {
     float: right;
+    margin-top: -223px;
   }
 }

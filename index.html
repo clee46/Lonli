@@ -43,13 +43,15 @@
           <option value="medication">Medication</option>
           <option value="selfharm">Self Harm</option>
         </select>
-        <label for="gender">Gender:</label>
-        <input type="radio" name="gender" value="female"></input>
-        <label for="female">F</label>
-        <input type="radio" name="gender" value="male"></input>
-        <label for="male">M</label>
-        <input type="radio" name="gender" value="other" checked></input>
-        <label for="other">Other</label>
+        <div id="radiobuttons">
+          <label for="gender">Gender:</label>
+          <input type="radio" name="gender" value="female"></input>
+          <label for="female">F</label>
+          <input type="radio" name="gender" value="male"></input>
+          <label for="male">M</label>
+          <input type="radio" name="gender" value="other" checked></input>
+          <label for="other">Other</label>
+        </div>
         <label for="post">Post:</label>
         <textarea id="body" name="post" rows="8" cols="40"></textarea>
         <button type="submit">Submit</button>
