@@ -18,13 +18,15 @@ Post.newPost = function() {
       author: $('#author').val(),
       category: $('#category').val(),
       body: $('#body').val(),
-      date: new Date(e.timeStamp),
+      date: new Date().toDateString() + ' ' + new Date().toLocaleTimeString(),
       gender: $('input[name="gender"]:checked').val(),
       replies: []
     });
+    newPost.numReplies = newPost.replies.length;
     var postString = JSON.stringify(newPost);
     forumData.push(postString);
     Post.pullPost();
+    $('#new-post')[0].reset();
   });
 };
 Post.pullPost = function() {
@@ -38,6 +40,7 @@ Post.pullPost = function() {
       postsView.show(temp, uid);
     });
   });
+  setTimeout(function() {postsView.limitPosts();}, 500);
 };
 $(function() {
   $('#new-reply').hide();     // hide reply forum
@@ -45,5 +48,8 @@ $(function() {
   postsView.getTemplate();    // get post template
   repliesView.getTemplate();  // get reply template
   Post.pullPost();            // fetch most recent forum data from Firebase
+
   Post.newPost();             // assign event handler for creating new post
+  postsView.filterHandler();
+  postsView.loadMore();
 });

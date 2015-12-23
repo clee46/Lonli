@@ -14,12 +14,13 @@ Reply.newReply = function(id, uid) {
     var newReply = new Reply({
       author: $('#replyAuthor').val(),
       body: $('#replyBody').val(),
-      date: new Date(e.timeStamp),
+      date: new Date().toDateString() + ' ' + new Date().toLocaleTimeString()
     });
     postList[id-1].replies.push(newReply);
     var data = JSON.stringify(postList[id-1]);
     forumData.child(uid).set(data);
     repliesView.appendReply(newReply, id-1, uid);
+    $('#new-reply')[0].reset();
   });
 
 };

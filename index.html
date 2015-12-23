@@ -7,6 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
     <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
@@ -34,9 +35,9 @@
       <form id="new-post">
         <h1>Need to get something off your chest?</h1>
         <label for="username">Username:</label>
-        <input id="author" type="text" name="username"></input>
+        <input id="author" type="text" name="username" required></input>
         <label for="title">Post Title:</label>
-        <input id="title" type="text" name="title"></input>
+        <input id="title" type="text" name="title" required></input>
         <label for="category">Category:</label>
         <select id="category">
           <option value="" disabled selected>Select a category</option>
@@ -55,16 +56,16 @@
         <input type="radio" name="gender" value="other" checked></input>
         <label for="other">Other</label>
         <label for="post">Post:</label>
-        <textarea id="body" name="post" rows="8" cols="40"></textarea>
+        <textarea id="body" name="post" rows="8" cols="40" required></textarea>
         <button type="click" id="submitpost">Submit</button>
       </form>
 
 
       <form id="new-reply">
         <label for="username">Username:</label>
-        <input id="replyAuthor" type="text" name="username"></input>
+        <input id="replyAuthor" type="text" name="username" required></input>
         <label for="reply">Reply:</label>
-        <textarea id="replyBody" name="reply" rows="8" cols="40"></textarea>
+        <textarea id="replyBody" name="reply" rows="8" cols="40" required></textarea>
         <button type="click" id="submitreply">Submit</button>
       </form>
 
@@ -87,7 +88,7 @@
         <button id="back">Back</button>
         <div id="entries">
         </div>
-        <button type="click">Load More</button>
+        <button id="loadMore" type="click">Load More</button>
       </section>
 
     </main>
