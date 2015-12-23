@@ -189,6 +189,7 @@ main {
   font-size: 15px;
   text-transform: uppercase;
   border: none;
+  margin-bottom: 40px;
 }
 
 #forum label {
@@ -215,6 +216,178 @@ main {
   font-size: 15px;
   font-family: Raleway;
   font-weight: 300;
+}
+
+article .title {
+  color: white;
+  font-size: 1.7em;
+  font-family: Raleway;
+}
+
+article .author {
+  color: white;
+  font-size: 1em;
+  font-family: Raleway;
+  font-weight: 300;
+}
+
+article .gender {
+  color: white;
+  font-size: .8em;
+  font-family: Raleway;
+  font-weight: 300;
+  margin-top: -10px;
+}
+
+article .date {
+  color: white;
+  font-size: .8em;
+  font-family: Raleway;
+  font-weight: 300;
+  margin-top: -10px;
+}
+
+article .body {
+  font-size: 1.2em;
+  font-family: Raleway;
+  font-weight: 300;
+  background-color: white;
+  color: #2A9D8F;
+  padding: 20px;
+}
+
+article .category {
+  color: white;
+  font-size: .8em;
+  font-family: Raleway;
+  font-weight: 300;
+  margin-top: 20px;
+  border-bottom: 2px dotted white;
+  padding-bottom: 20px;
+}
+
+article .postNum {
+  color: white;
+  font-size: .8em;
+  font-family: Raleway;
+  font-weight: 300;
+  float: right;
+}
+
+#new-reply {
+  background: #2A9D8F;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10%;
+  border-radius: 9px 9px 9px 9px;
+  -moz-border-radius: 9px 9px 9px 9px;
+  -webkit-border-radius: 9px 9px 9px 9px;
+  border: none;
+  padding: 15px;
+}
+
+#new-reply textarea {
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  border: none;
+}
+
+#new-reply label {
+  display: block;
+  line-height: 2em;
+  font-family: Raleway;
+  font-weight: 300;
+  color: white;
+  text-transform: lowercase;
+}
+
+#new-reply button {
+  display: block;
+  margin-top: 15px;
+  border: none;
+  background-color: #BADA55;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  color: white;
+  text-transform: uppercase;
+  padding: 7px;
+  font-size: 15px;
+  font-family: Raleway;
+  font-weight: 300;
+}
+
+#new-reply input {
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  line-height: 20px;
+  border: none;
+  width: 42.3%;
+}
+
+#new-reply h1 {
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#resources-form {
+  width: 90%;
+  background: #2A9D8F;
+  margin: 0 auto;
+  margin-top: 10%;
+  border-radius: 9px 9px 9px 9px;
+  -moz-border-radius: 9px 9px 9px 9px;
+  -webkit-border-radius: 9px 9px 9px 9px;
+  border: none;
+  padding: 15px;
+}
+
+#resources-form h1 {
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#resources-form select {
+  font-size: 15px;
+  text-transform: uppercase;
+  border: none;
+}
+
+.box {
+  margin-top: 15%;
+  padding: 0 2%;
+}
+
+.box h1 {
+  font-family: Raleway;
+  font-size: 2.2em;
+  font-weight: 300;
+}
+
+.box h2 {
+  font-family: Raleway;
+  font-weight: 300;
+}
+
+.box a {
+  font-family: Raleway;
+  font-weight: 300;
+}
+
+body {
+  margin-bottom: -10px;
+}
+
+main {
+  padding-bottom: 100px;
 }
 
 @media (min-width: 500px) {
@@ -281,14 +454,113 @@ main {
   #forum {
     width: 85%;
   }
+
+  #new-reply {
+    width: 85%;
+  }
+
+  #resources-form h1 {
+    display: inline-block;
+    padding-right: 15px;
+  }
+
+  #resources-form select {
+    display: inline-block;
+  }
 }
 
 @media (min-width: 750px) {
   #new-post input[type="text"] {
-    width: 45%;
+    width: 55%;
   }
 
-  #new-post textarea {
-    float: right;
+  #column1 {
+    float: left;
+    width: 55%;
+
+  }
+
+  #column2 {
+    margin-bottom: 50px;
+  }
+
+  #new-post button {
+    margin-right: auto;
+    margin-left: auto;
+    clear:both;
+  }
+
+  #new-post textarea{
+    width: 43%;
+  }
+
+  #new-reply button {
+    margin-right: auto;
+    margin-left: auto;
+    clear:both;
+  }
+
+  #new-reply textarea{
+    width: 43%;
+    line-height: 20px;
+  }
+
+  #new-reply {
+    width: 70%;
+  }
+
+  #formcenter {
+    text-align: center;
+  }
+
+  #new-reply label {
+    text-align: left;
+    margin-left: 28%;
+    padding-bottom: 5px;
+    padding-top: 10px;
+  }
+
+  #resources-form {
+    width: 70%;
+    margin-bottom: 8%;
+  }
+
+  #resourcecenter {
+    margin: 0 auto;
+  }
+
+  .box {
+    padding: 0 8%;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  #new-post {
+    width: 75%;
+    margin-top: 5%;
+  }
+
+  #new-reply {
+    width: 75%;
+  }
+
+  #forum {
+    width: 75%;
+    margin-top: 5%;
+  }
+
+  #resources-form {
+    width: 65%;
+  }
+
+  #resourcecenter {
+    width: 90%;
+    text-align: center;
+  }
+
+  .box {
+    padding: 0 7%;
+    margin-top: -20px;
   }
 }
