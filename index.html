@@ -34,36 +34,11 @@
 
       <form id="new-post">
         <h1>Need to get something off your chest?</h1>
-
-        <label for="username">Username:</label>
-        <input id="author" type="text" name="username" required></input>
-        <label for="title">Post Title:</label>
-        <input id="title" type="text" name="title" required></input>
-        <label for="category">Category:</label>
-        <select id="category">
-          <option value="" disabled selected>Select a category</option>
-          <option value="general">General</option>
-          <option value="depression">Depression</option>
-          <option value="anxiety">Anxiety</option>
-          <option value="therapy">Therapy</option>
-          <option value="medication">Medication</option>
-          <option value="selfharm">Self Harm</option>
-        </select>
-        <label for="gender">Gender:</label>
-        <input type="radio" name="gender" value="female"></input>
-        <label for="female">F</label>
-        <input type="radio" name="gender" value="male"></input>
-        <label for="male">M</label>
-        <input type="radio" name="gender" value="other" checked></input>
-        <label for="other">Other</label>
-        <label for="post">Post:</label>
-        <textarea id="body" name="post" rows="8" cols="40" required></textarea>
-
         <div id="column1">
           <label for="username">Username:</label>
-          <input id="author" type="text" name="username"></input>
+          <input id="author" type="text" name="username" required></input>
           <label for="title">Post Title:</label>
-          <input id="title" type="text" name="title"></input>
+          <input id="title" type="text" name="title" required></input>
           <label for="category">Category:</label>
           <select id="category">
             <option value="" disabled selected>Select a category</option>
@@ -84,14 +59,13 @@
         </div>
         <div id="column2">
           <label for="post">Post:</label>
-          <textarea id="body" name="post" rows="8" cols="40"></textarea>
+          <textarea id="body" name="post" rows="8" cols="40" required></textarea>
         </div>
         <button type="click" id="submitpost">Submit</button>
       </form>
 
 
       <form id="new-reply">
-
         <div id="formcenter">
           <h1>Leave a Reply</h1>
           <label for="username">Username:</label>
