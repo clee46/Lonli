@@ -12,7 +12,7 @@ repliesView.showReplies = function(id, uid) {
 };
 repliesView.appendReply = function(reply,id, uid) {
   console.log('appendReply called');
+  reply.body = marked(reply.body);
   var html = repliesView.replyTemplate(reply);
-  console.log(html);
   $('#' + uid + ' .postedReplies').append(html).show();
 };

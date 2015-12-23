@@ -8,6 +8,8 @@ postsView.getTemplate = function() {
 };
 postsView.show = function(post, uid) {
   console.log('postsView.show called');
+  post.body = marked(post.body);
+  post.numReplies = post.replies.length;
   var html = postsView.postTemplate(post);
   $('#entries').prepend(html);
   $('#entries article:first-child').attr('id',uid);
@@ -39,9 +41,35 @@ postsView.replyHandler = function() {
   $('#back').on('click', function(event) {
     event.preventDefault();
     $('#back').hide();              // hide back button
-    $('.posts').siblings().show();  // show all posts
+    // $('.posts').siblings().show();  // show all posts
+    postsView.limitPosts();
     $('.postedReplies').hide();     // hide all replies
     $('#new-reply').hide();         // hide reply form
     $('#new-post').show();          // show new post form
+  });
+};
+postsView.filterHandler = function() {
+  $('#filter').on('change', function(event) {
+    $('#entries').find('.posts').show();    // resets to show all posts
+    $('.category:not(:contains(' + this.value + '))').parent().hide();
+  });
+};
+postsView.limitPosts = function() {
+  $('.posts').hide();
+  $('.posts').each(function(index) {
+    if (index < 2){
+      $(this).show();
+    }
+  });
+};
+postsView.loadMore = function() {
+  $('#loadMore').on('click', function(event) {
+    event.preventDefault();
+    console.log('button clicked');
+    $('#entries article:hidden').each(function(index, currentElement) {
+      if (index < 2){
+        $(this).show();
+      }
+    });
   });
 };

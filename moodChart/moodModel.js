@@ -1,7 +1,7 @@
 var moodData = {};
 var moodDataArray = [];
 
-moodData.newDate = new Date().toISOString().slice(0,10);
+moodData.newDate = new Date().toDateString();
 moodData.rating = null;
 moodData.exercise = null;
 moodData.sleep = null;
