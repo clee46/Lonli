@@ -1,72 +1,47 @@
 var postsView = {};
 
 postsView.getTemplate = function() {
+  console.log('postsView.getTemplate called');
   $.get('templates/posts.html', function(data, message, xhr) {
     postsView.postTemplate = Handlebars.compile(data);
   });
 };
 postsView.show = function(post, uid) {
+  console.log('postsView.show called');
   var html = postsView.postTemplate(post);
   $('#entries').prepend(html);
   $('#entries article:first-child').attr('id',uid);
   postsView.replyHandler();
 };
-postsView.replyEvent = function(event) {
-  event.preventDefault();
-  var id = $(this).siblings('.postNum').text();
-  // $(this).parent().attr('id', 'activePost');
-  var uid = $(this).parent().attr('id');
-
-  if ($('.postedReplies').length === 0) {
-    postList[id-1].replies.forEach(function(reply) {
-      repliesView.showReply(reply, id, uid);
-    });
-  }
-  else {
-    repliesView.showReplies(id, uid);     // show existing replies
-  }
-  Reply.newReply(id, uid);
-
-  $('#new-reply').show();
-  $('#new-post').hide();
-  $(this).parent().siblings().hide();
-  $('#back').show();
-  $('.title').unbind('click', postsView.replyEvent);
-};
 postsView.replyHandler = function() {
+  console.log('replyHandler called');
   // clicking on title hides other posts, shows reply form/back button/post replies
-  // repliesView.getTemplate();
-  $('.title').on('click', postsView.replyEvent);
-    // event.preventDefault();
-    // var id = $(this).siblings('.postNum').text();
-    // // $(this).parent().attr('id', 'activePost');
-    // var uid = $(this).parent().attr('id');
-    //
-    // if ($('.postedReplies').length === 0) {
-    //   postList[id-1].replies.forEach(function(reply) {
-    //     repliesView.showReply(reply, id, uid);
-    //   });
-    // }
-    // else {
-    //   repliesView.showReplies(id, uid);     // show existing replies
-    // }
-    // Reply.newReply(id, uid);
-    //
-    // $('#new-reply').show();
-    // $('#new-post').hide();
-    // $(this).parent().siblings().hide();
-    // $('#back').show();
-    // $('.title').unbind();
-  // };
-  // clicking back button shows all posts, hides reply form/back button
-  $('#back').click(function(event) {
+  $(document).off('click','.title').on('click', '.title', function(event) {
+    console.log('replyEvent called');
     event.preventDefault();
-    // $('#activePost').removeAttr('id');
-    $('#back').hide();
-    $('.posts').siblings().show();
-    $('.postedReplies').hide();
-    $('#new-reply').hide();
-    $('#new-post').show();
-    $('.title').bind('click', postsView.replyEvent);
+    var id = $(this).siblings('.postNum').text().slice(6);    // get the post number
+    var uid = $(this).parent().attr('id');                    // get the Firebase unique ID
+    if ($(this).siblings('.postedReplies').is(':empty')) {
+      postList[id-1].replies.forEach(function(reply) {
+        repliesView.appendReply(reply, id, uid);
+      });
+    }
+    else {
+      repliesView.showReplies(id, uid);     // show existing replies
+    }
+    Reply.newReply(id, uid);
+    $('#new-reply').show();             // show reply form
+    $('#new-post').hide();              // hide new post form
+    $(this).parent().siblings().hide(); // hide all other posts but this one
+    $('#back').show();                  // show back button
+  });
+  // clicking on back button shows all posts, hides reply form/back button/post replies
+  $('#back').on('click', function(event) {
+    event.preventDefault();
+    $('#back').hide();              // hide back button
+    $('.posts').siblings().show();  // show all posts
+    $('.postedReplies').hide();     // hide all replies
+    $('#new-reply').hide();         // hide reply form
+    $('#new-post').show();          // show new post form
   });
 };

@@ -1,17 +1,18 @@
 var repliesView = {};
 
 repliesView.getTemplate = function() {
+  console.log('repliesView.getTemplate called');
   $.get('templates/replies.html', function(data, message, xhr) {
     repliesView.replyTemplate = Handlebars.compile(data);
   });
 };
 repliesView.showReplies = function(id, uid) {
+  console.log('showReplies called');
   $('#' + uid + ' .postedReplies').show();
-  // postList[id-1].replies.forEach(function(reply) {
-  //   $('#' + uid + ' .postedReplies').append(repliesView.replyTemplate(reply));
-  // });
 };
-repliesView.showReply = function(reply,id, uid) {
+repliesView.appendReply = function(reply,id, uid) {
+  console.log('appendReply called');
   var html = repliesView.replyTemplate(reply);
-  $('#' + uid + ' .postedReplies').append(html);
+  console.log(html);
+  $('#' + uid + ' .postedReplies').append(html).show();
 };

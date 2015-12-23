@@ -10,12 +10,14 @@
     <title>LonLi</title>
   </head>
   <body>
+
     <header>
       <img src=""/>
       <h2>Welcome To...</h2>
       <h1>lonli</h1>
       <h3>You Are Not Alone</h3>
     </header>
+
     <nav>
       <ul id="navbar">
         <li><a href="#">Forum</a></li>
@@ -23,7 +25,9 @@
         <li><a href="#">Resources</a></li>
       </ul>
     </nav>
+
     <main>
+
       <form id="new-post">
         <h1>Need to get something off your chest?</h1>
         <label for="username">Username:</label>
@@ -46,15 +50,19 @@
         <input type="radio" name="gender" value="other" checked>Other</input>
         <label for="post">Post:</label>
         <textarea id="body" name="post" rows="8" cols="40"></textarea>
-        <button type="submit">Submit</button>
+        <button type="click" id="submitpost">Submit</button>
       </form>
+
+
       <form id="new-reply">
         <label for="username">Username:</label>
         <input id="replyAuthor" type="text" name="username"></input>
         <label for="reply">Reply:</label>
         <textarea id="replyBody" name="reply" rows="8" cols="40"></textarea>
-        <button type="submit">Submit</button>
+        <button type="click" id="submitreply">Submit</button>
       </form>
+
+
       <section id="forum">
         <h1>Have advice to give, or an ear to lend?</h1>
         <label for="filter">Filter:</label>
@@ -75,6 +83,7 @@
         </div>
         <button type="click">Load More</button>
       </section>
+
     </main>
     <script src="scripts/posts.js"></script>
     <script src="scripts/replies.js"></script>
