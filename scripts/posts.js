@@ -2,6 +2,7 @@ var forumData = new Firebase('https://brilliant-fire-1757.firebaseio.com/');
 var postList = [];
 
 function Post (opts) {
+  console.log('Post called');
   Object.keys(opts).forEach(function(e,index,keys) {
     this[e] = opts[e];
   },this);
@@ -9,6 +10,7 @@ function Post (opts) {
   postList.push(this);
 }
 Post.newPost = function() {
+  console.log('newPost called');
   $('#new-post').on('submit', function(e) {
     e.preventDefault();
     var newPost = new Post({
@@ -22,11 +24,11 @@ Post.newPost = function() {
     });
     var postString = JSON.stringify(newPost);
     forumData.push(postString);
-    // postsView.show(newPost);
     Post.pullPost();
   });
 };
 Post.pullPost = function() {
+  console.log('pullPost called');
   postList = [];    // reset the postList
   $('#entries').empty();
   forumData.once('value', function(snapshot) {
@@ -38,11 +40,10 @@ Post.pullPost = function() {
   });
 };
 $(function() {
-  $('#new-reply').hide();   // hide reply forum
-  $('#back').hide();        // hide back button
-  postsView.getTemplate();  // get post template
-  repliesView.getTemplate();
-  Post.pullPost();          // fetch most recent forum data from firebase
-  Post.newPost();
-  // postsView.replyHandler();
+  $('#new-reply').hide();     // hide reply forum
+  $('#back').hide();          // hide back button
+  postsView.getTemplate();    // get post template
+  repliesView.getTemplate();  // get reply template
+  Post.pullPost();            // fetch most recent forum data from Firebase
+  Post.newPost();             // assign event handler for creating new post
 });
