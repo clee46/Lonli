@@ -390,6 +390,62 @@ main {
   padding-bottom: 100px;
 }
 
+#mood-form {
+  background: #2A9D8F;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 5%;
+  border-radius: 9px 9px 9px 9px;
+  -moz-border-radius: 9px 9px 9px 9px;
+  -webkit-border-radius: 9px 9px 9px 9px;
+  border: none;
+  padding: 15px;
+  line-height: 2em;
+  font-family: Raleway;
+  font-weight: 300;
+  color: white;
+  text-transform: lowercase;
+}
+
+#mood-form button {
+  display: block;
+  margin-top: 15px;
+  border: none;
+  background-color: #BADA55;
+  border-radius: 4px 4px 4px 4px;
+  -moz-border-radius: 4px 4px 4px 4px;
+  -webkit-border-radius: 4px 4px 4px 4px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: Raleway;
+  font-weight: 300;
+}
+
+#mood-form h1 {
+  font-family: Raleway;
+  font-weight: 300;
+  font-size: 20px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#mood-form label {
+  font-family: Raleway;
+  font-weight: 300;
+  color: white;
+  text-transform: lowercase;
+  font-size: 1.1em;
+  display: inline-block;
+  padding-top: 20px;
+}
+
+#mood-form input[type="radio"] {
+  display: inline-block
+}
+
+
+
 @media (min-width: 500px) {
   header h2 {
     font-family: Raleway;
@@ -533,6 +589,10 @@ main {
     padding: 0 8%;
   }
 
+  #mood-form {
+    width: 68%;
+  }
+
 }
 
 @media (min-width: 1024px) {
@@ -562,5 +622,15 @@ main {
   .box {
     padding: 0 7%;
     margin-top: -20px;
+  }
+
+  #mood-form {
+    width: 58%;
+  }
+
+  #moodChart {
+    margin: 0 auto;
+    max-width: 100%;
+    margin-top: 5%;
   }
 }
