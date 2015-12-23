@@ -11,6 +11,7 @@ function Post (opts) {
 }
 Post.newPost = function() {
   console.log('newPost called');
+
   $('#new-post').on('submit', function(e) {
     e.preventDefault();
     var newPost = new Post({
@@ -42,14 +43,14 @@ Post.pullPost = function() {
   });
   setTimeout(function() {postsView.limitPosts();}, 500);
 };
-$(function() {
-  $('#new-reply').hide();     // hide reply forum
-  $('#back').hide();          // hide back button
-  postsView.getTemplate();    // get post template
-  repliesView.getTemplate();  // get reply template
-  Post.pullPost();            // fetch most recent forum data from Firebase
-
-  Post.newPost();             // assign event handler for creating new post
-  postsView.filterHandler();
-  postsView.loadMore();
-});
+// $(function() {
+//   // $('#new-reply').hide();     // hide reply forum
+//   // $('#back').hide();          // hide back button
+//   // postsView.getTemplate();    // get post template
+//   // repliesView.getTemplate();  // get reply template
+//   // Post.pullPost();            // fetch most recent forum data from Firebase
+//   //
+//   // Post.newPost();             // assign event handler for creating new post
+//   // postsView.filterHandler();
+//   // postsView.loadMore();
+// });

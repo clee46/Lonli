@@ -11,6 +11,7 @@ postsView.show = function(post, uid) {
   post.body = marked(post.body);
   post.numReplies = post.replies.length;
   var html = postsView.postTemplate(post);
+  // console.log(html);
   $('#entries').prepend(html);
   $('#entries article:first-child').attr('id',uid);
   postsView.replyHandler();
@@ -36,6 +37,10 @@ postsView.replyHandler = function() {
     $('#new-post').hide();              // hide new post form
     $(this).parent().siblings().hide(); // hide all other posts but this one
     $('#back').show();                  // show back button
+    $('#loadMore').hide();
+    $('#filter').find(':first-child').attr('selected', true);
+    $('#filter').hide();
+    $('label[for="filter"]').hide();
   });
   // clicking on back button shows all posts, hides reply form/back button/post replies
   $('#back').on('click', function(event) {
@@ -46,12 +51,23 @@ postsView.replyHandler = function() {
     $('.postedReplies').hide();     // hide all replies
     $('#new-reply').hide();         // hide reply form
     $('#new-post').show();          // show new post form
+    $('#loadMore').show();
+    $('#filter').show();
+    $('label[for="filter"]').show();
   });
 };
 postsView.filterHandler = function() {
   $('#filter').on('change', function(event) {
     $('#entries').find('.posts').show();    // resets to show all posts
-    $('.category:not(:contains(' + this.value + '))').parent().hide();
+    if ($('#filter').val() === 'all') {
+      $('#entries').find('.posts').show();
+      postsView.limitPosts();
+      $('#loadMore').show();
+    }
+    else {
+      $('.category:not(:contains(' + this.value + '))').parent().hide();
+      $('#loadMore').hide();
+    }
   });
 };
 postsView.limitPosts = function() {
