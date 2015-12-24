@@ -18,8 +18,8 @@ controller.mood = function() {
   $('#forum-tab').hide();
   $('#mood-tab').show();
   $('#resources-tab').hide();
-  moodData.loadData();
-  moodData.getData();
+  // moodData.loadData();
+  // moodData.getData();
   moodView.makeChart();
 };
 
@@ -30,7 +30,7 @@ controller.resources = function() {
   resourcesView.filterHandler();
 };
 
-// $(function() {
-//   moodData.loadData();
-//   moodData.getData();
-// });
+$(function() {
+  // moodData.loadData();
+  moodData.getData();
+});

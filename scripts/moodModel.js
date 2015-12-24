@@ -19,6 +19,7 @@ moodData.loadData = function() {
   var storedData = localStorage.getItem('moodChartData');
   var parsedData = JSON.parse(storedData);
   if(parsedData != null){
+    moodDataArray = [];
     parsedData.forEach(function(item) {
       // moodView.tempDateArray.push(val);
       moodDataArray.push(item);
@@ -28,7 +29,7 @@ moodData.loadData = function() {
 };
 
 moodData.getData = function() {
-  // moodData.loadData();
+  moodData.loadData();
   $('#moodSubmit').on('click', function(e) {
     e.preventDefault();
     // add time check here if we get to it
