@@ -31,6 +31,6 @@ controller.resources = function() {
 };
 
 $(function() {
-  // moodData.loadData();
+  moodData.loadData();
   moodData.getData();
 });
