@@ -446,7 +446,13 @@ main {
   display: inline-block
 }
 
+.resources-info {
+  font-family: Raleway;
+}
 
+.resources-title {
+  font-family: Raleway;
+}
 
 @media (min-width: 500px) {
   header h2 {
