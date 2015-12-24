@@ -50,5 +50,6 @@ moodData.getData = function() {
     moodData.array.push(newEnt);
     moodData.saveChart(moodData.array);
     moodView.makeChart();
+    moodView.makeChart();// needed to get rid of small chart on first load
   });
 };
