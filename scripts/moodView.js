@@ -1,63 +1,63 @@
 var moodView = {};
-moodView.tempMoodArray = [];
-moodView.tempDateArray = [];
-moodView.tempSleepArray = [];
-moodView.tempWeatherArray = [];
-moodView.tempExerciseArray = [];
-moodView.tempEatArray = [];
-moodView.tempMedsArray = [];
-moodView.tempDrugsArray = [];
+// moodView.tempMoodArray = [];
+// moodView.tempDateArray = [];
+// moodView.tempSleepArray = [];
+// moodView.tempWeatherArray = [];
+// moodView.tempExerciseArray = [];
+// moodView.tempEatArray = [];
+// moodView.tempMedsArray = [];
+// moodView.tempDrugsArray = [];
 
 moodView.makeChart = function() {
   //Needed to stop chart flickering
-  moodView.tempMoodArray = [];
-  moodView.tempDateArray = [];
-  moodView.tempSleepArray = [];
-  moodView.tempWeatherArray = [];
-  moodView.tempExerciseArray = [];
-  moodView.tempEatArray = [];
-  moodView.tempMedsArray = [];
-  moodView.tempDrugsArray = [];
+  var tempMoodArray = [];
+  var tempDateArray = [];
+  var tempSleepArray = [];
+  var tempWeatherArray = [];
+  var tempExerciseArray = [];
+  var tempEatArray = [];
+  var tempMedsArray = [];
+  var tempDrugsArray = [];
   $('canvas').remove();
   $('#mood-tab').append($('<canvas>').attr('id', 'moodChart'));
   //Here to grab mood rating
-  moodDataArray.forEach(function(item) {
+  moodData.array.forEach(function(item) {
     var val = item.rating;
-    moodView.tempMoodArray.push(val);
+    tempMoodArray.push(val);
   });
-  moodDataArray.forEach(function(item) {
+  moodData.array.forEach(function(item) {
     var val = item.exercise;
-    moodView.tempExerciseArray.push(val);
+    tempExerciseArray.push(val);
   });
-  moodDataArray.forEach(function(item) {
+  moodData.array.forEach(function(item) {
     var val = item.sleep;
-    moodView.tempSleepArray.push(val);
+    tempSleepArray.push(val);
   });
-  moodDataArray.forEach(function(item) {
+  moodData.array.forEach(function(item) {
     var val = item.weather;
-    moodView.tempWeatherArray.push(val);
+    tempWeatherArray.push(val);
   });
-  moodDataArray.forEach(function(item) {
+  moodData.array.forEach(function(item) {
     var val = item.eat;
-    moodView.tempEatArray.push(val);
+    tempEatArray.push(val);
   });
-  moodDataArray.forEach(function(item) {
+  moodData.array.forEach(function(item) {
     var val = item.meds;
-    moodView.tempMedsArray.push(val);
+    tempMedsArray.push(val);
   });
-  moodDataArray.forEach(function(item) {
+  moodData.array.forEach(function(item) {
     var val = item.drugs;
-    moodView.tempDrugsArray.push(val);
+    tempDrugsArray.push(val);
   });
 
 //Here to grab date
-  moodDataArray.forEach(function(item) {
+  moodData.array.forEach(function(item) {
     var val = item.newDate;
-    moodView.tempDateArray.push(val);
+    tempDateArray.push(val);
   });
 
   moodView.data = {
-    labels: moodView.tempDateArray,
+    labels: tempDateArray,
     datasets: [
       {
         label: 'Mood',
@@ -68,7 +68,7 @@ moodView.makeChart = function() {
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
         pointHighlightStroke: 'rgba(124,80,20,1)',
-        data: moodView.tempMoodArray
+        data: tempMoodArray
       },
       {
         label: 'Exercise',
@@ -78,7 +78,7 @@ moodView.makeChart = function() {
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
         pointHighlightStroke: 'rgba(220,220,220,0)',
-        data: moodView.tempExerciseArray
+        data: tempExerciseArray
       },
       {
         label: 'Sleep',
@@ -89,7 +89,7 @@ moodView.makeChart = function() {
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
         pointHighlightStroke: 'rgba(25,25,87,1)',
-        data: moodView.tempSleepArray
+        data: tempSleepArray
       },
       {
         label: 'Weather',
@@ -100,7 +100,7 @@ moodView.makeChart = function() {
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
         pointHighlightStroke: 'rgba(124,115,20,1)',
-        data: moodView.tempWeatherArray
+        data: tempWeatherArray
       },
       {
         label: 'Ate well',
@@ -110,7 +110,7 @@ moodView.makeChart = function() {
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
         pointHighlightStroke: 'rgba(220,220,220,0)',
-        data: moodView.tempEatArray
+        data: tempEatArray
       },
       {
         label: 'Taken meds',
@@ -120,7 +120,7 @@ moodView.makeChart = function() {
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
         pointHighlightStroke: 'rgba(220,220,220,0)',
-        data: moodView.tempMedsArray
+        data: tempMedsArray
       },
       {
         label: 'Taken Drugs',
@@ -130,13 +130,13 @@ moodView.makeChart = function() {
         pointStrokeColor: '#fff',
         pointHightlightFill: '#fff',
         pointHighlightStroke: 'rgba(220,220,220,0)',
-        data: moodView.tempDrugsArray
+        data: tempDrugsArray
       }
     ]
   };
 
-  moodView.ctx = $('#moodChart').get(0).getContext('2d');
-  moodView.lineChart = new Chart(moodView.ctx).Line(moodView.data);
+  var ctx = $('#moodChart').get(0).getContext('2d');
+  moodView.lineChart = new Chart(ctx).Line(moodView.data);
   //Options here
   Chart.defaults.global.responsive = true;
   Chart.defaults.global.multiTooltipTemplate = '<%= datasetLabel %> - <%= value %>';
