@@ -28,6 +28,7 @@ moodData.loadData = function() {
 };
 
 moodData.getData = function() {
+  // moodData.loadData();
   $('#moodSubmit').on('click', function(e) {
     e.preventDefault();
     // add time check here if we get to it
@@ -39,7 +40,6 @@ moodData.getData = function() {
     moodData.eat = $('input[name="eat"]:checked').val();
     moodData.meds = $('input[name="meds"]:checked').val();
     moodData.drugs = $('input[name="drugs"]:checked').val();
-//Why won't you SEE THIS
     if(!moodData.rating || !moodData.exercise || !moodData.sleep || !moodData.weather || !moodData.eat || !moodData.meds || !moodData.drugs){
       alert('Please check all options');
       return;
@@ -48,8 +48,10 @@ moodData.getData = function() {
     moodDataArray.push(moodData);
     moodData.saveChart(moodDataArray);
     moodView.makeChart();
+    // moodView.makeChart();
   });
 };
 // Controller
 // moodData.loadData();
 // moodData.getData();
+// moodView.makeChart();

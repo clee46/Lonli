@@ -10,6 +10,14 @@ moodView.tempDrugsArray = [];
 
 moodView.makeChart = function() {
   //Needed to stop chart flickering
+  moodView.tempMoodArray = [];
+  moodView.tempDateArray = [];
+  moodView.tempSleepArray = [];
+  moodView.tempWeatherArray = [];
+  moodView.tempExerciseArray = [];
+  moodView.tempEatArray = [];
+  moodView.tempMedsArray = [];
+  moodView.tempDrugsArray = [];
   $('canvas').remove();
   $('#mood-tab').append($('<canvas>').attr('id', 'moodChart'));
   //Here to grab mood rating
@@ -136,5 +144,4 @@ moodView.makeChart = function() {
 // Controller
 // $(function() {
 //   moodView.makeChart();
-//
 // });
