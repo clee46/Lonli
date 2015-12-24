@@ -8,14 +8,6 @@ function DataEntry (opts) {
   this.id = postList.length + 1;
   postList.push(this);
 }
-// moodData.entry.newDate = new Date().toDateString();
-// moodData.entry.rating = null;
-// moodData.entry.exercise = null;
-// moodData.entry.sleep = null;
-// moodData.entry.weather = null;
-// moodData.entry.eat = null;
-// moodData.entry.meds = null;
-// moodData.entry.drugs = null;
 
 moodData.saveChart = function(chart) {
   localStorage.clear();
@@ -29,7 +21,6 @@ moodData.loadData = function() {
   if(parsedData != null){
     moodData.array = [];
     parsedData.forEach(function(item) {
-      // moodView.tempDateArray.push(val);
       moodData.array.push(item);
     });
   }
@@ -40,7 +31,6 @@ moodData.getData = function() {
   moodData.loadData();
   $('#moodSubmit').on('click', function(e) {
     e.preventDefault();
-    // add time check here if we get to it
     $('#preview-text').remove();
     var newEnt = new DataEntry({
       newDate: new Date().toDateString(),
@@ -60,10 +50,5 @@ moodData.getData = function() {
     moodData.array.push(newEnt);
     moodData.saveChart(moodData.array);
     moodView.makeChart();
-    // moodView.makeChart();
   });
 };
-// Controller
-// moodData.loadData();
-// moodData.getData();
-// moodView.makeChart();

@@ -1,12 +1,4 @@
 var moodView = {};
-// moodView.tempMoodArray = [];
-// moodView.tempDateArray = [];
-// moodView.tempSleepArray = [];
-// moodView.tempWeatherArray = [];
-// moodView.tempExerciseArray = [];
-// moodView.tempEatArray = [];
-// moodView.tempMedsArray = [];
-// moodView.tempDrugsArray = [];
 
 moodView.makeChart = function() {
   //Needed to stop chart flickering
@@ -141,7 +133,3 @@ moodView.makeChart = function() {
   Chart.defaults.global.responsive = true;
   Chart.defaults.global.multiTooltipTemplate = '<%= datasetLabel %> - <%= value %>';
 };
-// Controller
-// $(function() {
-//   moodView.makeChart();
-// });
