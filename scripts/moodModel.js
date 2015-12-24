@@ -1,16 +1,16 @@
 var moodData = {};
-var moodDataArray = [];
-
-moodData.newDate = new Date().toDateString();
-moodData.rating = null;
-moodData.exercise = null;
-moodData.sleep = null;
-moodData.weather = null;
-moodData.eat = null;
-moodData.meds = null;
-moodData.drugs = null;
+moodData.array = [];
+function DataEntry (opts) {
+  console.log('new data obj');
+  Object.keys(opts).forEach(function(e,index,keys) {
+    this[e] = opts[e];
+  },this);
+  this.id = postList.length + 1;
+  postList.push(this);
+}
 
 moodData.saveChart = function(chart) {
+  localStorage.clear();
   var savedChart = JSON.stringify(chart);
   localStorage.setItem('moodChartData', savedChart);
 };
@@ -19,39 +19,36 @@ moodData.loadData = function() {
   var storedData = localStorage.getItem('moodChartData');
   var parsedData = JSON.parse(storedData);
   if(parsedData != null){
+    moodData.array = [];
     parsedData.forEach(function(item) {
-      // moodView.tempDateArray.push(val);
-      moodDataArray.push(item);
+      moodData.array.push(item);
     });
   }
   console.log(parsedData);
 };
 
 moodData.getData = function() {
-  // moodData.loadData();
+  moodData.loadData();
   $('#moodSubmit').on('click', function(e) {
     e.preventDefault();
-    // add time check here if we get to it
     $('#preview-text').remove();
-    moodData.rating = $('input[name="mood"]:checked').val();
-    moodData.exercise = $('input[name="exercise"]:checked').val();
-    moodData.sleep = $('input[name="sleep"]:checked').val();
-    moodData.weather = $('input[name="weather"]:checked').val();
-    moodData.eat = $('input[name="eat"]:checked').val();
-    moodData.meds = $('input[name="meds"]:checked').val();
-    moodData.drugs = $('input[name="drugs"]:checked').val();
-    if(!moodData.rating || !moodData.exercise || !moodData.sleep || !moodData.weather || !moodData.eat || !moodData.meds || !moodData.drugs){
+    var newEnt = new DataEntry({
+      newDate: new Date().toDateString(),
+      rating: $('input[name="mood"]:checked').val(),
+      exercise: $('input[name="exercise"]:checked').val(),
+      sleep: $('input[name="sleep"]:checked').val(),
+      weather: $('input[name="weather"]:checked').val(),
+      eat: $('input[name="eat"]:checked').val(),
+      meds: $('input[name="meds"]:checked').val(),
+      drugs: $('input[name="drugs"]:checked').val()
+    });
+    if(!newEnt.rating || !newEnt.exercise || !newEnt.sleep || !newEnt.weather || !newEnt.eat || !newEnt.meds || !newEnt.drugs){
       alert('Please check all options');
       return;
     }
-    console.log(moodData);
-    moodDataArray.push(moodData);
-    moodData.saveChart(moodDataArray);
+    console.log(moodData.entry);
+    moodData.array.push(newEnt);
+    moodData.saveChart(moodData.array);
     moodView.makeChart();
-    // moodView.makeChart();
   });
 };
-// Controller
-// moodData.loadData();
-// moodData.getData();
-// moodView.makeChart();
