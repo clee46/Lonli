@@ -390,7 +390,13 @@ main {
   padding-bottom: 100px;
 }
 
+.resources-info {
+  font-family: Raleway;
+}
 
+.resources-title {
+  font-family: Raleway;
+}
 
 @media (min-width: 500px) {
   header h2 {
