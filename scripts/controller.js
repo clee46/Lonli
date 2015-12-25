@@ -21,6 +21,7 @@ controller.mood = function() {
   // moodData.loadData();
   // moodData.getData();
   moodView.makeChart();
+  moodView.makeChart();
 };
 
 controller.resources = function() {
