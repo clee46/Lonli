@@ -11,9 +11,7 @@ postsView.show = function(post, uid) {
   post.body = marked(post.body);
   // remove script tags
   post.body = util.sanitize(post.body);
-  post.title = util.sanitize(post.title);
-  post.author = util.sanitize(post.author);
-  // end sanitize
+
   post.numReplies = post.replies.length;
   var html = postsView.postTemplate(post);
   // console.log(html);

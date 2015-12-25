@@ -15,8 +15,6 @@ repliesView.appendReply = function(reply,id, uid) {
   reply.body = marked(reply.body);
   //remove scrpit tags
   reply.body = util.sanitize(reply.body);
-  reply.author = util.sanitize(reply.author);
-  //end remove script tags
   var html = repliesView.replyTemplate(reply);
   $('#' + uid + ' .postedReplies').append(html).show();
 };
