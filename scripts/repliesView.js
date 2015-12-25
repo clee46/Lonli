@@ -13,6 +13,10 @@ repliesView.showReplies = function(id, uid) {
 repliesView.appendReply = function(reply,id, uid) {
   console.log('appendReply called');
   reply.body = marked(reply.body);
+  //remove scrpit tags
+  reply.body = util.sanitize(reply.body);
+  reply.author = util.sanitize(reply.author);
+  //end remove script tags
   var html = repliesView.replyTemplate(reply);
   $('#' + uid + ' .postedReplies').append(html).show();
 };
