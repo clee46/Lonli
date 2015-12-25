@@ -20,7 +20,9 @@ controller.mood = function() {
   $('#resources-tab').hide();
   // moodData.loadData();
   // moodData.getData();
-  // moodView.makeChart();
+
+  moodView.makeChart();
+  moodView.makeChart();
 };
 
 controller.resources = function() {

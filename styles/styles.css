@@ -137,6 +137,7 @@ main {
   width: 60%;
 }
 
+
 #new-post select {
   font-size: 15px;
   text-transform: uppercase;
@@ -641,4 +642,7 @@ main {
     max-width: 100%;
     margin-top: 5%;
   }
+}
+.attack{
+  color: red;
 }

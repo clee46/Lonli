@@ -9,6 +9,9 @@ postsView.getTemplate = function() {
 postsView.show = function(post, uid) {
   console.log('postsView.show called');
   post.body = marked(post.body);
+  // remove script tags
+  post.body = util.sanitize(post.body);
+
   post.numReplies = post.replies.length;
   var html = postsView.postTemplate(post);
   // console.log(html);

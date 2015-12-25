@@ -13,6 +13,8 @@ repliesView.showReplies = function(id, uid) {
 repliesView.appendReply = function(reply,id, uid) {
   console.log('appendReply called');
   reply.body = marked(reply.body);
+  //remove scrpit tags
+  reply.body = util.sanitize(reply.body);
   var html = repliesView.replyTemplate(reply);
   $('#' + uid + ' .postedReplies').append(html).show();
 };
