@@ -1,5 +1,5 @@
 util = {};
 //I don't think this will stop all XSS attacks, but some.
 util.sanitize = function(text){
-  return text.replace(/<script[^>]*>/gi, ' XSS attack detected ');
+  return text.replace(/<script[^>]*>/gi, ' <strong>XSS attack detected :</strong> ');
 };
