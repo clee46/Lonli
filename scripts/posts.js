@@ -1,4 +1,4 @@
-var forumData = new Firebase('https://brilliant-fire-1757.firebaseio.com/');
+// var forumData = new Firebase('https://brilliant-fire-1757.firebaseio.com/');
 var postList = [];
 
 function Post (opts) {

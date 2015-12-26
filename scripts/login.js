@@ -1,21 +1,15 @@
 var login = {};
-var ref = new Firebase('https://brilliant-fire-1757.firebaseio.com/');
-// ref.onAuth(function(authData) {
-//   if (authData && isNewUser) {
-//     // save the user's profile into the database so we can list users,
-//     // use them in Security and Firebase Rules, and show profiles
-//     ref.child('users').child(authData.uid).set({
-//       provider: authData.provider,
-//       name: getName(authData)
-//     });
-//   }
-// });
+var forumData = new Firebase('https://brilliant-fire-1757.firebaseio.com/');
+// var usersRef = forumData.child('users');
+var currentUserId = '';
 
 login.authHandler = function(error, authData) {
   if (error) {
     console.log('Login Failed!', error);
   } else {
     console.log('Authenticated successfully with payload:', authData);
+    page('/forum');
+    // use page.js to route to forum page or mood tracker
   }
 };
 login.showNewLogin = function() {
@@ -25,7 +19,7 @@ login.showNewLogin = function() {
     var password = $('#newPass').val();
     console.log('New user: ' + username + ' , password: ' + password);
 
-    ref.createUser({email: username, password: password}, function(error, userData) {
+    forumData.createUser({email: username, password: password}, function(error, userData) {
       if (error) {
         switch (error.code) {
         case 'EMAIL_TAKEN':
@@ -39,6 +33,7 @@ login.showNewLogin = function() {
         }
       } else {
         console.log('Successfully created user account with uid:', userData.uid);
+        page('/forum');
         // use page.js to route to forum page or mood tracker
       }
     });
@@ -51,27 +46,38 @@ login.showReturnLogin = function() {
     var username = $('#existUser').val();
     var password = $('#existPass').val();
     console.log('Return user: ' + username + ' , password: ' + password);
-    ref.authWithPassword({
+    forumData.authWithPassword({
       email    : username,
       password : password
     }, login.authHandler);
   });
 };
 
-$(function() {
-  login.showReturnLogin();
-  $('#new-btn').on('click', function() {
-    $('#new-user').show();
-    $('#existing-user').hide();
-    $('#existing-btn').show();
-    $('#new-btn').hide();
-    login.showNewLogin();
-  });
-  $('#existing-btn').on('click', function() {
-    $('#new-user').hide();
-    $('#existing-user').show();
-    $('#new-btn').show();
-    $('#existing-btn').hide();
-    login.showReturnLogin();
-  });
-});
+// $(function() {
+//   login.showReturnLogin();
+//   $('#new-btn').on('click', function() {
+//     $('#new-user').show();
+//     $('#existing-user').hide();
+//     $('#existing-btn').show();
+//     $('#new-btn').hide();
+//     login.showNewLogin();
+//   });
+//   $('#existing-btn').on('click', function() {
+//     $('#new-user').hide();
+//     $('#existing-user').show();
+//     $('#new-btn').show();
+//     $('#existing-btn').hide();
+//     login.showReturnLogin();
+//   });
+//   var isNewUser = true;
+//   forumData.onAuth(function(authData) {
+//     if (authData && isNewUser) {
+//       // save the user's profile into the database so we can list users,
+//       // use them in Security and Firebase Rules, and show profiles
+//       forumData.child('users').child(authData.uid).set({
+//         password: authData.provider,
+//         name: authData.password.email.replace(/@.*/, '')
+//       });
+//     }
+//   });
+// });

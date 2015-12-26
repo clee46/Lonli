@@ -29,7 +29,8 @@
 
     <nav>
       <ul id="navbar">
-        <li><a href="/">Forum</a></li>
+        <li><a href="/">Login</a></li>
+        <li><a href="/forum">Forum</a></li>
         <li><a href="/mood">Mood Chart</a></li>
         <li><a href="/resources">Resources</a></li>
       </ul>
@@ -37,6 +38,33 @@
     </nav>
 
     <main>
+      <div id="login-status"></div>
+
+      <div id="login-tab">
+        <form id="new-user" style="display: none">
+          <div id="formcenter">
+            <h1>Create New User</h1>
+            <label for="username">Username:</label>
+            <input id="newUser" type="text" name="username" required></input>
+            <label for="reply">Password:</label>
+            <input id="newPass" type="password" name="password" required></input>
+            <button type="click" id="create-btn">Create</button>
+          </div>
+        </form>
+        <button type="click" id="existing-btn" style="display: none">Login Existing User</button>
+        <form id="existing-user">
+          <div id="formcenter">
+            <h1>Login Existing User</h1>
+            <label for="username">Username:</label>
+            <input id="existUser" type="text" name="username" required></input>
+            <label for="reply">Password:</label>
+            <input id="existPass" type="password" name="password" required></input>
+            <button type="click" id="login-btn">Login</button>
+          </div>
+        </form>
+        <button type="click" id="new-btn">Create User</button>
+      </div>
+
       <div id="forum-tab">
         <form id="new-post">
           <h1>Need to get something off your chest?</h1>
@@ -98,6 +126,7 @@
             <option value="other">Other Gender</option>
           </select>
           <div id="entries">
+            <!-- FORUM POSTS GO HERE -->
           </div>
           <button id="loadMore" type="click">Load More</button>
         </section>
@@ -237,6 +266,7 @@
 
     </main>
     <script src="scripts/util.js"></script>
+    <script src="scripts/login.js"></script>
     <script src="scripts/posts.js"></script>
     <script src="scripts/replies.js"></script>
     <script src="scripts/moodModel.js"></script>
