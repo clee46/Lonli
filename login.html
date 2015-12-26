@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Raleway:400,300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Dancing+Script' rel='stylesheet' type='text/css'>
-    <!-- <link rel="stylesheet" type="text/css" href="styles/styles.css"> -->
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.5/marked.min.js"></script>
@@ -44,9 +44,10 @@
           <input id="newUser" type="text" name="username" required></input>
           <label for="reply">Password:</label>
           <input id="newPass" type="password" name="password" required></input>
+          <button type="click" id="create-btn">Create</button>
         </div>
-        <button type="click" id="create-btn">Create</button>
       </form>
+      <button type="click" id="existing-btn" style="display: none">Login Existing User</button>
       <form id="existing-user">
         <div id="formcenter">
           <h1>Login Existing User</h1>
@@ -54,11 +55,10 @@
           <input id="existUser" type="text" name="username" required></input>
           <label for="reply">Password:</label>
           <input id="existPass" type="password" name="password" required></input>
+          <button type="click" id="login-btn">Login</button>
         </div>
-        <button type="click" id="login-btn">Login</button>
       </form>
       <button type="click" id="new-btn">Create User</button>
-      <button type="click" id="existing-btn" style="display: none">Login Existing User</button>
     </main>
     <script src="scripts/login.js"></script>
     <!-- <script src="scripts/posts.js"></script>
