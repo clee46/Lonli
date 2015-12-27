@@ -1,5 +1,6 @@
 var controller = {};
 
+
 controller.login = function() {
   $('#login-tab').show();
   $('#forum-tab').hide();
@@ -20,17 +21,20 @@ controller.login = function() {
     $('#existing-btn').hide();
     login.showReturnLogin();
   });
-  var isNewUser = true;
-  forumData.onAuth(function(authData) {
-    if (authData && isNewUser) {
-      // save the user's profile into the database so we can list users,
-      // use them in Security and Firebase Rules, and show profiles
-      forumData.child('users').child(authData.uid).set({
-        password: authData.provider,
-        name: authData.password.email.replace(/@.*/, '')
-      });
-    }
-  });
+  // var isNewUser = true;
+  // ref.onAuth(function(authData) {
+  //   if (authData && isNewUser) {
+  //     // save the user's profile into the database so we can list users,
+  //     // use them in Security and Firebase Rules, and show profiles
+  //     var chartRef = ref.child('users').child(authData.uid).moodChartData;
+  //     // forumData.child('users').child(authData.uid).set({
+  //     //   moodChartData: [],
+  //     //   password: authData.provider,
+  //     //   name: authData.password.email.replace(/@.*/, '')
+  //     // });
+  //     // forumData.child('users').child(authData.uid).push({moodChartData: []});
+  //   }
+  // });
 };
 
 controller.forum = function() {
@@ -68,7 +72,7 @@ controller.resources = function() {
   resourcesView.filterHandler();
 };
 
-$(function() {
-  // moodData.loadData();
-  moodData.getData();
-});
+// $(function() {
+//   // moodData.loadData();
+//   moodData.getData();
+// });

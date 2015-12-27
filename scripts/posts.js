@@ -1,4 +1,3 @@
-// var forumData = new Firebase('https://brilliant-fire-1757.firebaseio.com/');
 var postList = [];
 
 function Post (opts) {
@@ -25,7 +24,7 @@ Post.newPost = function() {
     });
     newPost.numReplies = newPost.replies.length;
     var postString = JSON.stringify(newPost);
-    forumData.push(postString);
+    ref.push(postString);
     Post.pullPost();
     $('#new-post')[0].reset();
   });
@@ -34,7 +33,7 @@ Post.pullPost = function() {
   console.log('pullPost called');
   postList = [];    // reset the postList
   $('#entries').empty();
-  forumData.once('value', function(snapshot) {
+  ref.once('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var uid = childSnapshot.key();
       var temp = new Post(JSON.parse(childSnapshot.val()));
