@@ -29,7 +29,7 @@
 
     <nav>
       <ul id="navbar">
-        <li><a href="/">Login</a></li>
+        <li><a href="/" id="login-logout">Login</a></li>
         <li><a href="/forum">Forum</a></li>
         <li><a href="/mood">Mood Chart</a></li>
         <li><a href="/resources">Resources</a></li>
@@ -51,7 +51,10 @@
             <button type="click" id="create-btn">Create</button>
           </div>
         </form>
-        <button type="click" id="existing-btn" style="display: none">Login Existing User</button>
+        <div id="existing-prompt" style="display: none">
+          <h6>Already have an account?</h6>
+          <button type="click" id="existing-btn">Login Existing User</button>
+        </div>
         <form id="existing-user">
           <div id="formcenter">
             <h1>Login Existing User</h1>
@@ -62,7 +65,10 @@
             <button type="click" id="login-btn">Login</button>
           </div>
         </form>
-        <button type="click" id="new-btn">Create User</button>
+        <div id="new-prompt">
+          <h6>New to lonli?</h6>
+          <button type="click" id="new-btn">Create User</button>
+        </div>
       </div>
 
       <div id="forum-tab">

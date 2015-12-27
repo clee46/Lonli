@@ -62,25 +62,28 @@ moodData.getData = function() {
   moodData.loadData(chartRef);
   $(document).off('click', '#moodSubmit').on('click', '#moodSubmit', function(e) {
     e.preventDefault();
-    $('#preview-text').remove();
-    var newEnt = new DataEntry({
-      newDate: new Date().toDateString(),
-      rating: $('input[name="mood"]:checked').val(),
-      exercise: $('input[name="exercise"]:checked').val(),
-      sleep: $('input[name="sleep"]:checked').val(),
-      weather: $('input[name="weather"]:checked').val(),
-      eat: $('input[name="eat"]:checked').val(),
-      meds: $('input[name="meds"]:checked').val(),
-      drugs: $('input[name="drugs"]:checked').val()
-    });
-    if(!newEnt.rating || !newEnt.exercise || !newEnt.sleep || !newEnt.weather || !newEnt.eat || !newEnt.meds || !newEnt.drugs){
-      alert('Please check all options');
-      return;
+    if (currentUserId === '') {alert('You need to login in order to track your mood!');}
+    else {
+      $('#preview-text').remove();
+      var newEnt = new DataEntry({
+        newDate: new Date().toDateString(),
+        rating: $('input[name="mood"]:checked').val(),
+        exercise: $('input[name="exercise"]:checked').val(),
+        sleep: $('input[name="sleep"]:checked').val(),
+        weather: $('input[name="weather"]:checked').val(),
+        eat: $('input[name="eat"]:checked').val(),
+        meds: $('input[name="meds"]:checked').val(),
+        drugs: $('input[name="drugs"]:checked').val()
+      });
+      if(!newEnt.rating || !newEnt.exercise || !newEnt.sleep || !newEnt.weather || !newEnt.eat || !newEnt.meds || !newEnt.drugs){
+        alert('Please check all options');
+        return;
+      }
+      // console.log(moodData.entry);
+      moodData.array.push(newEnt);                      // updates local moodData array
+      moodData.saveChart(newEnt, chartRef);             // updates Firebase data
+      moodView.makeChart();                             // updates chart
+      // moodView.makeChart();// needed to get rid of small chart on first load
     }
-    console.log(moodData.entry);
-    moodData.array.push(newEnt);                      // updates local moodData array
-    moodData.saveChart(newEnt, chartRef);     // updates Firebase data
-    moodView.makeChart();                             // updates chart
-    // moodView.makeChart();// needed to get rid of small chart on first load
   });
 };

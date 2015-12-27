@@ -8,6 +8,9 @@ login.authHandler = function(error, authData) {
     console.log('Login Failed!', error);
   } else {
     console.log('Authenticated successfully with payload:', authData);
+    $('#login-logout').text('Logout');
+    $('#existing-user')[0].reset();
+    $('#login-status').empty().append('<p>Logged in as: ' + authData.password.email + '<p>');
     currentUserId = authData.uid;
     moodData.getData();
     // page('/forum');
@@ -33,6 +36,9 @@ login.showNewLogin = function() {
         }
       } else {
         console.log('Successfully created user account with uid:', userData.uid);
+        $('#login-logout').text('Logout');
+        $('#new-user')[0].reset();
+        $('#login-status').empty().append('<p>Logged in as: ' + username + '<p>');
         usersRef.child(userData.uid).set({
           moodChartData: [],
           password: password,
@@ -57,4 +63,7 @@ login.showReturnLogin = function() {
       password : password
     }, login.authHandler);
   });
+};
+login.logout = function() {
+
 };

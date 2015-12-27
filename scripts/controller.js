@@ -2,23 +2,34 @@ var controller = {};
 
 
 controller.login = function() {
+
+  $('#login-logout').text('Login');
+  $('#login-status').empty().append('<p>You are not logged in.</p>');
+  ref.unauth();
+  currentUserId = '';
+  console.log('preparing to remove canvas');
+  $('canvas').remove();
+  console.log('canvas removed!');
+
   $('#login-tab').show();
   $('#forum-tab').hide();
   $('#mood-tab').hide();
   $('#resources-tab').hide();
-  login.showReturnLogin();
+  login.showReturnLogin();              // by default, show return user form
+
   $('#new-btn').on('click', function() {
     $('#new-user').show();
     $('#existing-user').hide();
-    $('#existing-btn').show();
-    $('#new-btn').hide();
+    $('#existing-prompt').show();
+    $('#new-prompt').hide();
     login.showNewLogin();
   });
+
   $('#existing-btn').on('click', function() {
     $('#new-user').hide();
     $('#existing-user').show();
-    $('#new-btn').show();
-    $('#existing-btn').hide();
+    $('#new-prompt').show();
+    $('#existing-prompt').hide();
     login.showReturnLogin();
   });
   // var isNewUser = true;
@@ -59,9 +70,10 @@ controller.mood = function() {
   $('#resources-tab').hide();
   // moodData.loadData();
   // moodData.getData();
-
-  moodView.makeChart();
-  moodView.makeChart();
+  if (currentUserId !== '') {
+    moodView.makeChart();
+    moodView.makeChart();
+  }
 };
 
 controller.resources = function() {
