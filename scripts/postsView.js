@@ -1,7 +1,7 @@
 var postsView = {};
 
 postsView.getTemplate = function() {
-  $.get('templates/posts.html', function(data, message, xhr) {
+  $.get('templates/posts.html').done(function(data, message, xhr) {
     postsView.postTemplate = Handlebars.compile(data);
   });
 };
