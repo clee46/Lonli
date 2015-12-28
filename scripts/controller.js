@@ -2,7 +2,7 @@ var controller = {};
 
 
 controller.login = function() {
-
+  $('#login-status').hide();
   $('#login-logout').text('Login');
   $('#login-status').empty().append('<p>You are not logged in.</p>');
   ref.unauth();
@@ -34,6 +34,7 @@ controller.login = function() {
 };
 
 controller.forum = function() {
+  $('#login-status').show();
   if (currentUserId !== '') { // if logged in, set current username, hide post author
     usersRef.child(currentUserId).once('value', function(snapshot) {
       currentUsername = snapshot.val().username;
@@ -67,6 +68,7 @@ controller.forum = function() {
 };
 
 controller.mood = function() {
+  $('#login-status').show();
   $('#login-tab').hide();
   $('#forum-tab').hide();
   $('#mood-tab').show();
@@ -80,6 +82,7 @@ controller.mood = function() {
 };
 
 controller.resources = function() {
+  $('#login-status').show();
   $('#login-tab').hide();
   $('#forum-tab').hide();
   $('#mood-tab').hide();
