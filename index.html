@@ -28,12 +28,14 @@
     </header>
 
     <nav>
-      <ul id="navbar">
-        <li><a href="/" id="login-logout">Login</a></li>
-        <li><a href="/forum">Forum</a></li>
-        <li><a href="/mood">Mood Chart</a></li>
-        <li><a href="/resources">Resources</a></li>
-      </ul>
+      <div id="navigation">
+        <ul id="navbar">
+          <li><a href="/" id="login-logout">Login</a></li>
+          <li><a href="/forum">Forum</a></li>
+          <li><a href="/mood">Mood Chart</a></li>
+          <li><a href="/resources">Resources</a></li>
+        </ul>
+      </div>
       <a name="scroll"></a>
     </nav>
 
@@ -61,8 +63,8 @@
           <form id="existing-user">
             <div id="formcenter">
               <h1>Login Existing User</h1>
-              <label for="username">Username:</label>
-              <input id="existUser" type="text" name="username" required></input>
+              <label for="email">Email:</label>
+              <input id="existUser" type="text" name="email" required></input>
               <label for="reply">Password:</label>
               <input id="existPass" type="password" name="password" required></input>
               <button type="click" id="login-btn">Login</button>
