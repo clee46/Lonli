@@ -59,8 +59,7 @@ controller.forum = function() {
   $('#new-reply').hide();     // hide reply form
   $('#back').hide();          // hide back button
   $('#loadMore').show();
-  postsView.getTemplate();    // get post template
-  repliesView.getTemplate();  // get reply template
+
   Post.pullPost();            // fetch most recent forum data from Firebase
   Post.newPost();             // assign event handler for creating new post
   postsView.filterHandler();
@@ -91,6 +90,8 @@ controller.resources = function() {
 };
 
 $(function() {
+  postsView.getTemplate();    // get post template
+  repliesView.getTemplate();  // get reply template
   // Stick the #nav to the top of the window
   var nav = $('nav');
   var navHomeY = nav.offset().top;
