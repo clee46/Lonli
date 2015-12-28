@@ -1,26 +1,22 @@
 var postsView = {};
 
 postsView.getTemplate = function() {
-  console.log('postsView.getTemplate called');
   $.get('templates/posts.html', function(data, message, xhr) {
     postsView.postTemplate = Handlebars.compile(data);
   });
 };
 postsView.show = function(post, uid) {
-  console.log('postsView.show called');
   post.body = marked(post.body);
   // remove script tags
   post.body = util.sanitize(post.body);
 
   post.numReplies = post.replies.length;
   var html = postsView.postTemplate(post);
-  // console.log(html);
   $('#entries').prepend(html);
   $('#entries article:first-child').attr('id',uid);
   postsView.replyHandler();
 };
 postsView.replyHandler = function() {
-  console.log('replyHandler called');
   // clicking on title hides other posts, shows reply form/back button/post replies
   $(document).off('click','.title').on('click', '.title', function(event) {
     console.log('replyEvent called');
@@ -84,7 +80,6 @@ postsView.limitPosts = function() {
 postsView.loadMore = function() {
   $('#loadMore').on('click', function(event) {
     event.preventDefault();
-    console.log('button clicked');
     $('#entries article:hidden').each(function(index, currentElement) {
       if (index < 2){
         $(this).show();
