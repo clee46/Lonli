@@ -6,7 +6,11 @@ var currentUsername = '';
 
 login.authHandler = function(error, authData) {
   if (error) {
+<<<<<<< HEAD
     alert('Login Failed!', error);
+=======
+    console.log('Login Failed!', error);
+>>>>>>> fbedaee550b2364d4a448add58fbcaaccd25a8ad
   } else {
     console.log('Authenticated successfully with payload:', authData);
     $('#login-logout').text('Logout');
@@ -28,6 +32,7 @@ login.showNewLogin = function() {
       if (error) {
         switch (error.code) {
         case 'EMAIL_TAKEN':
+<<<<<<< HEAD
           alert('The new user account cannot be created because the email is already in use.');
           break;
         case 'INVALID_EMAIL':
@@ -35,6 +40,15 @@ login.showNewLogin = function() {
           break;
         default:
           alert('Error creating user:', error);
+=======
+          console.log('The new user account cannot be created because the email is already in use.');
+          break;
+        case 'INVALID_EMAIL':
+          console.log('The specified email is not a valid email.');
+          break;
+        default:
+          console.log('Error creating user:', error);
+>>>>>>> fbedaee550b2364d4a448add58fbcaaccd25a8ad
         }
       } else {
         console.log('Successfully created user account with uid:', userData.uid);
