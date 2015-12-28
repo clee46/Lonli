@@ -45,7 +45,14 @@ header h3 {
   margin-left: 2%;
   letter-spacing: .1em;
 }
-
+canvas {
+  display: block;
+  width: 100% !important;
+  max-width: 800px;
+  height auto !important;
+  margin: 0 auto;
+  margin-top: 2em;
+}
 #scroll {
   text-align: center;
   margin-top: -15px;
@@ -149,10 +156,6 @@ main {
   line-height: 20px;
   border: none;
 }
-
-
-
-
 #new-post {
   background: #2A9D8F;
   width: 90%;

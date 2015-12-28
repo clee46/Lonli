@@ -4,6 +4,31 @@ var usersRef = ref.child('users');      // references to users database
 var currentUserId = '';
 var currentUsername = '';
 
+login.fillUser = function() {
+  if (currentUserId !== '') { // if logged in, set current username, hide post author
+    usersRef.child(currentUserId).once('value', function(snapshot) {
+      currentUsername = snapshot.val().username;
+      $('#author').attr('placeholder', currentUsername);
+      $('#replyAuthor').attr('placeholder', currentUsername);
+    });
+    $('#author').prop('readonly', true);
+    $('#replyAuthor').prop('readonly', true);
+  }
+  else {  // if not logged in, allow user to post using any username they want
+    $('#author').removeAttr('placeholder');
+    $('#replyAuthor').removeAttr('placeholder');
+    $('#author').prop('readonly', false);
+    $('#replyAuthor').prop('readonly', false);
+  }
+};
+login.persistAuth = function() {
+  var authData = ref.getAuth();
+  if (authData) {
+    console.log('Authenticated user with id:', authData.uid);
+    login.fillUser();
+    login.authHandler(null, authData);
+  }
+};
 login.authHandler = function(error, authData) {
   if (error) {
     alert('Login Failed!', error);
@@ -14,7 +39,9 @@ login.authHandler = function(error, authData) {
     $('#login-status').empty().append('<p>Logged in as: ' + authData.password.email + '<p>');
     currentUserId = authData.uid;
     moodData.getData();
-    page('/forum');
+    if (window.location.href === 'http://localhost:9000/') {
+      page('/forum');
+    }
   }
 };
 login.showNewLogin = function() {

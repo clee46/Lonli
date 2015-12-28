@@ -1,6 +1,5 @@
 var controller = {};
 
-
 controller.login = function() {
   $('#login-status').hide();
   $('#login-logout').text('Login');
@@ -35,22 +34,7 @@ controller.login = function() {
 
 controller.forum = function() {
   $('#login-status').show();
-  if (currentUserId !== '') { // if logged in, set current username, hide post author
-    usersRef.child(currentUserId).once('value', function(snapshot) {
-      currentUsername = snapshot.val().username;
-      $('#author').attr('placeholder', currentUsername);
-      $('#replyAuthor').attr('placeholder', currentUsername);
-    });
-
-    $('#author').prop('readonly', true);
-    $('#replyAuthor').prop('readonly', true);
-  }
-  else {  // if not logged in, allow user to post using any username they want
-    $('#author').removeAttr('placeholder');
-    $('#replyAuthor').removeAttr('placeholder');
-    $('#author').prop('readonly', false);
-    $('#replyAuthor').prop('readonly', false);
-  }
+  login.fillUser();
   $('#login-tab').hide();
   $('#forum-tab').show();
   $('#mood-tab').hide();
@@ -72,8 +56,6 @@ controller.mood = function() {
   $('#forum-tab').hide();
   $('#mood-tab').show();
   $('#resources-tab').hide();
-  // moodData.loadData();
-  // moodData.getData();
   if (currentUserId !== '') {
     moodView.makeChart();
     moodView.makeChart();
@@ -92,6 +74,7 @@ controller.resources = function() {
 $(function() {
   postsView.getTemplate();    // get post template
   repliesView.getTemplate();  // get reply template
+  login.persistAuth();        // on page reload, check if user was logged in
   // Stick the #nav to the top of the window
   var nav = $('nav');
   var navHomeY = nav.offset().top;
