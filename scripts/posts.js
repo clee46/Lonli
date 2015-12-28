@@ -1,7 +1,6 @@
 var postList = [];
 
 function Post (opts) {
-  console.log('Post called');
   Object.keys(opts).forEach(function(e,index,keys) {
     this[e] = opts[e];
   },this);
@@ -9,10 +8,9 @@ function Post (opts) {
   postList.push(this);
 }
 Post.newPost = function() {
-  console.log('newPost called');
-
-  $('#new-post').on('submit', function(e) {
+  $(document).off('submit', '#new-post').on('submit', '#new-post', function(e) {
     e.preventDefault();
+    if (currentUsername !== '') {$('#author').val(currentUsername);}
     var newPost = new Post({
       title: $('#title').val(),
       author: $('#author').val(),
@@ -30,7 +28,6 @@ Post.newPost = function() {
   });
 };
 Post.pullPost = function() {
-  console.log('pullPost called');
   postList = [];    // reset the postList
   $('#entries').empty();
   ref.once('value', function(snapshot) {
@@ -42,14 +39,3 @@ Post.pullPost = function() {
   });
   setTimeout(function() {postsView.limitPosts();}, 500);
 };
-// $(function() {
-//   // $('#new-reply').hide();     // hide reply forum
-//   // $('#back').hide();          // hide back button
-//   // postsView.getTemplate();    // get post template
-//   // repliesView.getTemplate();  // get reply template
-//   // Post.pullPost();            // fetch most recent forum data from Firebase
-//   //
-//   // Post.newPost();             // assign event handler for creating new post
-//   // postsView.filterHandler();
-//   // postsView.loadMore();
-// });

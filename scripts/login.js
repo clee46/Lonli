@@ -2,6 +2,7 @@ var login = {};
 var ref = new Firebase('https://brilliant-fire-1757.firebaseio.com/');
 var usersRef = ref.child('users');      // references to users database
 var currentUserId = '';
+var currentUsername = '';
 
 login.authHandler = function(error, authData) {
   if (error) {
@@ -13,16 +14,17 @@ login.authHandler = function(error, authData) {
     $('#login-status').empty().append('<p>Logged in as: ' + authData.password.email + '<p>');
     currentUserId = authData.uid;
     moodData.getData();
-    // page('/forum');
+    page('/forum');
   }
 };
 login.showNewLogin = function() {
   $(document).off('click', '#create-btn').on('click', '#create-btn', function(e) {
     e.preventDefault();
-    var username = $('#newUser').val();
+    var email = $('#newEmail').val();
     var password = $('#newPass').val();
+    var username = $('#newUser').val();
 
-    ref.createUser({email: username, password: password}, function(error, userData) {
+    ref.createUser({email: email, password: password}, function(error, userData) {
       if (error) {
         switch (error.code) {
         case 'EMAIL_TAKEN':
@@ -38,11 +40,12 @@ login.showNewLogin = function() {
         console.log('Successfully created user account with uid:', userData.uid);
         $('#login-logout').text('Logout');
         $('#new-user')[0].reset();
-        $('#login-status').empty().append('<p>Logged in as: ' + username + '<p>');
+        $('#login-status').empty().append('<p>Logged in as: ' + email + '<p>');
         usersRef.child(userData.uid).set({
           moodChartData: [],
+          username: username,
           password: password,
-          name: username.replace(/@.*/, '')
+          name: email.replace(/@.*/, '')
         });
         currentUserId = userData.uid;
         moodData.getData();
@@ -54,16 +57,11 @@ login.showNewLogin = function() {
 login.showReturnLogin = function() {
   $(document).off('click', '#login-btn').on('click', '#login-btn', function(e) {
     e.preventDefault();
-    console.log('clicked button for login!');
     var username = $('#existUser').val();
     var password = $('#existPass').val();
-    console.log('Return user: ' + username + ' , password: ' + password);
     ref.authWithPassword({
       email    : username,
       password : password
     }, login.authHandler);
   });
-};
-login.logout = function() {
-
 };
