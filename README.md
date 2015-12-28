@@ -18,3 +18,4 @@ Wednesday, December 23, 2015
 
 Monday, December 28, 2015
 - deployed to Heroku
+- fixed lingering bugs
