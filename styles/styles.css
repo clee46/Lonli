@@ -649,7 +649,14 @@ main {
   #new-reply textarea{
     width: 43%;
     line-height: 2em;
-    margin: auto;
+    margin-left: 28%;
+
+  }
+  #new-reply input{
+    width: 43%;
+    line-height: 2em;
+    margin-left: 28%;
+
   }
 
   #new-reply {
@@ -661,7 +668,7 @@ main {
   }
 
   #new-reply label {
-    text-align: left;
+    text-align: center;
     /*margin-left: 28%;*/
     padding-bottom: 0.3125em;
     padding-top: 0.625em;
