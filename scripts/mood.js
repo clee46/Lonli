@@ -14,7 +14,6 @@ moodData.saveChart = function(chart, chartRef) {
     chartRef.push(point);
   }
 };
-
 moodData.loadData = function(chartRef) {
   moodData.array = [];
   if (chartRef !== '') {
@@ -50,11 +49,9 @@ moodData.getData = function() {
         alert('Please check all options');
         return;
       }
-      // console.log(moodData.entry);
       moodData.array.push(newEnt);                      // updates local moodData array
       moodData.saveChart(newEnt, chartRef);             // updates Firebase data
       moodView.makeChart();                             // updates chart
-      // moodView.makeChart();// needed to get rid of small chart on first load
     }
   });
 };
