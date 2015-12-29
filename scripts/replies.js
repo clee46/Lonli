@@ -8,6 +8,7 @@ Reply.newReply = function(id, uid) {
   $('#new-reply').off('submit');
   $('#new-reply').on('submit', function(e) {
     e.preventDefault();
+    isReply = true;
     if (currentUsername !== '') {
       $('#replyAuthor').val(currentUsername);
     }

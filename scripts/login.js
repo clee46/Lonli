@@ -3,6 +3,8 @@ var ref = new Firebase('https://brilliant-fire-1757.firebaseio.com/');
 var usersRef = ref.child('users');      // references to users database
 var currentUserId = '';
 var currentUsername = '';
+var isReply = false;
+var uidHolder = '';
 
 login.fillUser = function() {
   if (currentUserId !== '') { // if logged in, set current username, hide post author
