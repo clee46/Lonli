@@ -13,7 +13,6 @@ moodData.saveChart = function(chart, chartRef) {
     var point = JSON.stringify(chart);
     chartRef.push(point);
   }
-
 };
 
 moodData.loadData = function(chartRef) {

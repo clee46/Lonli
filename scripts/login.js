@@ -69,7 +69,7 @@ login.showNewLogin = function() {
         $('#new-user')[0].reset();
         $('#login-status').empty().append('<p>Logged in as: ' + email + '<p>');
         usersRef.child(userData.uid).set({
-          moodChartData: [],
+          // moodChartData: [],
           username: username,
           password: password,
           name: email.replace(/@.*/, '')

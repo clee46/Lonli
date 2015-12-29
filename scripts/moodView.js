@@ -130,8 +130,6 @@ moodView.makeChart = function() {
   var ctx = $('#moodChart').get(0).getContext('2d');
   moodView.lineChart = new Chart(ctx).Line(moodView.data);
   //Options here
-  // $('canvas').attr('width', '600px');
-  // Chart.defaults.global.maintainAspectRatio: true;
   // Chart.defaults.global.responsive = true;
   Chart.defaults.global.multiTooltipTemplate = '<%= datasetLabel %> - <%= value %>';
 };

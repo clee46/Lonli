@@ -1,49 +1,26 @@
 var controller = {};
 
 controller.login = function() {
-  $('#login-status').hide();
-  $('#login-logout').text('Login');
-  $('#login-status').empty().append('<p>You are not logged in.</p>');
   ref.unauth();
   currentUserId = '';
   currentUsername = '';
-  $('canvas').remove();
-
-  $('#login-tab').show();
-  $('#forum-tab').hide();
-  $('#mood-tab').hide();
-  $('#resources-tab').hide();
+  view.showLogin();
   login.showReturnLogin();              // by default, show return user form
 
   $('#new-btn').on('click', function() {
-    $('#new-user').show();
-    $('#existing-user').hide();
-    $('#existing-prompt').show();
-    $('#new-prompt').hide();
+    view.showNewUserBtn();
     login.showNewLogin();
   });
 
   $('#existing-btn').on('click', function() {
-    $('#new-user').hide();
-    $('#existing-user').show();
-    $('#new-prompt').show();
-    $('#existing-prompt').hide();
+    view.showExistingUserBtn();
     login.showReturnLogin();
   });
 };
 
 controller.forum = function() {
-  $('#login-status').show();
+  view.showForum();
   login.fillUser();
-  $('#login-tab').hide();
-  $('#forum-tab').show();
-  $('#mood-tab').hide();
-  $('#resources-tab').hide();
-  $('#new-post').show();      // show new post form
-  $('#new-reply').hide();     // hide reply form
-  $('#back').hide();          // hide back button
-  $('#loadMore').show();
-
   Post.pullPost();            // fetch most recent forum data from Firebase
   Post.newPost();             // assign event handler for creating new post
   postsView.filterHandler();
@@ -51,23 +28,11 @@ controller.forum = function() {
 };
 
 controller.mood = function() {
-  $('#login-status').show();
-  $('#login-tab').hide();
-  $('#forum-tab').hide();
-  $('#mood-tab').show();
-  $('#resources-tab').hide();
-  if (currentUserId !== '') {
-    moodView.makeChart();
-    moodView.makeChart();
-  }
+  view.showMood();
 };
 
 controller.resources = function() {
-  $('#login-status').show();
-  $('#login-tab').hide();
-  $('#forum-tab').hide();
-  $('#mood-tab').hide();
-  $('#resources-tab').show();
+  view.showResources();
   resourcesView.filterHandler();
 };
 
@@ -75,29 +40,5 @@ $(function() {
   postsView.getTemplate();    // get post template
   repliesView.getTemplate();  // get reply template
   login.persistAuth();        // on page reload, check if user was logged in
-  // Stick the #nav to the top of the window
-  var nav = $('nav');
-  var navHomeY = nav.offset().top;
-  var isFixed = false;
-  var $w = $(window);
-  $w.scroll(function() {
-    var scrollTop = $w.scrollTop();
-    var shouldBeFixed = scrollTop > navHomeY;
-    if (shouldBeFixed && !isFixed) {
-      nav.css({
-        position: 'fixed',
-        top: 0,
-        left: nav.offset().left,
-        width: nav.width()
-      });
-      isFixed = true;
-    }
-    else if (!shouldBeFixed && isFixed)
-    {
-      nav.css({
-        position: 'static'
-      });
-      isFixed = false;
-    }
-  });
+  view.showNav();             // Stick the #nav to the top of the window
 });
