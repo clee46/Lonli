@@ -64,6 +64,7 @@ postsView.backButton = function() {
   $(document).off('click', '#back').on('click', '#back', function(event) {
     event.preventDefault();
     isReply = false;
+    uidHolder = '';
     $('#back').hide();              // hide back button
     postsView.limitPosts();
     $('.postedReplies').hide();     // hide all replies
@@ -72,7 +73,6 @@ postsView.backButton = function() {
     $('#loadMore').show();
     $('#filter').show();
     $('label[for="filter"]').show();
-    isReply = false;
   });
 };
 postsView.filterHandler = function() {

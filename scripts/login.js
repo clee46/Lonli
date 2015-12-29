@@ -33,7 +33,7 @@ login.persistAuth = function() {
 };
 login.authHandler = function(error, authData) {
   if (error) {
-    alert('Login Failed!', error);
+    alert('Login Failed!');
   } else {
     console.log('Authenticated successfully with payload:', authData);
     $('#login-logout').text('Logout');
