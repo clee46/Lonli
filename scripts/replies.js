@@ -20,7 +20,7 @@ Reply.newReply = function(id, uid) {
     postList[id-1].replies.push(newReply);
     var data = JSON.stringify(postList[id-1]);
     ref.child(uid).set(data);
-    repliesView.appendReply(newReply, id-1, uid);
+    // repliesView.appendReply(newReply, id-1, uid);
     $('#' + uid + ' .numReplies').text('Replies: ' + postList[id-1].replies.length);
     $('#new-reply')[0].reset();
   });
