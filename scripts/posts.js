@@ -8,7 +8,7 @@ function Post (opts) {
   postList.push(this);
 }
 Post.newPost = function() {
-  $(document).off('submit', '#new-post').on('submit', '#new-post', function(e) {
+  $(document).off('click', '#submitpost').on('click', '#submitpost', function(e) {
     e.preventDefault();
     if (currentUsername !== '') {$('#author').val(currentUsername);}
     var newPost = new Post({
