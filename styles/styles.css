@@ -6,26 +6,26 @@ header {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  padding-bottom: 20px;
-  margin-top: -40px;
-  margin-left: -8px;
-  margin-right: -8px;
+  padding-bottom: 1.25em;
+  margin-top: -2.5em;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
 }
 
 header h2 {
   font-family: Raleway;
-  font-size: 30px;
+  font-size: 1.875em;
   color: white;
   text-transform: uppercase;
   font-weight: 300;
-  padding-top: 30px;
+  /*padding-top: 1.875em;*/
   margin-left: 2%;
   letter-spacing: .1em;
 }
 
 header h1 {
   font-family: Dancing Script;
-  font-size: 150px;
+  font-size: 9.375em;
   color: white;
   text-transform: lowercase;
   border: 5px solid white;
@@ -33,15 +33,16 @@ header h1 {
   padding-right: 10%;
   display: inline-block;
   margin-left: 10%;
+  margin-bottom: -10em;
 }
 
 header h3 {
   font-family: Raleway;
-  font-size: 30px;
+  font-size: 1.875em;
   color: white;
   text-transform: uppercase;
   font-weight: 300;
-  padding-top: 30px;
+  /*padding-top: 1.875em;*/
   margin-left: 2%;
   letter-spacing: .1em;
 }
@@ -55,23 +56,23 @@ canvas {
 }
 #scroll {
   text-align: center;
-  margin-top: -15px;
+  margin-top: -0.9375em;
 }
 #scroll-anchor {
   position: relative;
   display: block;
-  top: -57px;
+  top: -3.5625em;
 }
 nav ul{
   list-style: none;
-  margin: 0 2px;
+  margin: 0 0.125em;
   padding: 0;
   display: block;
   justify-content: space-around;
   text-transform: uppercase;
   font-family: Raleway;
-  font-size: 24px;
-  padding: 15px 0px;
+  font-size: 1.5em;
+  padding: 0.9375em 0px;
 }
 
 nav ul a {
@@ -86,46 +87,46 @@ nav {
 main {
   padding-top: 1%;
   background-color: #e7e7e7;
-  margin-left: -8px;
-  margin-right: -8px;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
 }
 #login-status {
   font-family: Raleway;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 1.25em;
   color: black;
   text-transform: uppercase;
   text-align: center;
 }
 
-#login-div {
+#login-tab {
   background: #2A9D8F;
   width: 40%;
   margin: 0 auto;
-  border-radius: 9px 9px 9px 9px;
-  -moz-border-radius: 9px 9px 9px 9px;
-  -webkit-border-radius: 9px 9px 9px 9px;
+  border-radius: 0.5625em;
+  -moz-border-radius: 0.5625em;
+  -webkit-border-radius: 0.5625em;
   border: none;
-  padding: 15px;
+  padding: 0.9375em;
   margin-top: 10%;
-  margin-bottom: 300px;
+  margin-bottom: 18.75em;
 }
-#login-div h1 {
+#login-tab h1 {
   font-family: Raleway;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 1.25em;
   color: white;
   text-transform: uppercase;
 }
-#login-div h6 {
+#login-tab h6 {
   font-family: Raleway;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 0.75em;
   color: white;
   text-transform: uppercase;
   text-align: center;
 }
-#login-div label {
+#login-tab label {
   display: block;
   line-height: 2em;
   font-family: Raleway;
@@ -133,27 +134,27 @@ main {
   color: white;
   text-transform: lowercase;
 }
-#login-div button{
+#login-tab button{
   display: block;
   margin: 0 auto;
-  margin-top: 15px;
+  margin-top: 0.9375em;
   border: none;
   background-color: #BADA55;
-  border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   color: white;
   text-transform: uppercase;
-  padding: 7px;
-  font-size: 15px;
+  padding: 0.4375em;
+  font-size: 0.9375em;
   font-family: Raleway;
   font-weight: 300;
 }
-#login-div input {
-  border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
-  line-height: 20px;
+#login-tab input {
+  border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  line-height: 2em;
   border: none;
 }
 #new-post {
@@ -161,17 +162,17 @@ main {
   width: 90%;
   margin: 0 auto;
   margin-top: 2.5%;
-  border-radius: 9px 9px 9px 9px;
-  -moz-border-radius: 9px 9px 9px 9px;
-  -webkit-border-radius: 9px 9px 9px 9px;
+  border-radius: 0.5625em;
+  -moz-border-radius: 0.5625em;
+  -webkit-border-radius: 0.5625em;
   border: none;
-  padding: 15px;
+  padding: 0.9375em;
 }
 
 #new-post h1 {
   font-family: Raleway;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 1.25em;
   color: white;
   text-transform: uppercase;
 }
@@ -187,25 +188,25 @@ main {
 
 #new-post button {
   display: block;
-  margin-top: 15px;
+  margin-top: 0.9375em;
   border: none;
   background-color: #BADA55;
-  border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   color: white;
   text-transform: uppercase;
-  padding: 7px;
-  font-size: 15px;
+  padding: 0.4375em;
+  font-size: 0.9375em;
   font-family: Raleway;
   font-weight: 300;
 }
 
 #new-post input {
-  border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
-  line-height: 20px;
+  border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  line-height: 2em;
   border: none;
 }
 
@@ -215,20 +216,20 @@ main {
 
 
 #new-post select {
-  font-size: 15px;
+  font-size: 0.9375em;
   text-transform: uppercase;
   border: none;
 }
 
 #new-post label[for="female"] {
   display: inline;
-  padding-right: 10px;
+  padding-right: 0.625em;
   text-transform: uppercase;
 }
 
 #new-post label[for="male"] {
   display: inline;
-  padding-right: 10px;
+  padding-right: 0.625em;
   text-transform: uppercase;
 }
 
@@ -238,9 +239,9 @@ main {
 }
 
 #new-post textarea {
-  border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   border: none;
 }
 
@@ -249,26 +250,26 @@ main {
   background: #2A9D8F;
   margin: 0 auto;
   margin-top: 10%;
-  border-radius: 9px 9px 9px 9px;
-  -moz-border-radius: 9px 9px 9px 9px;
-  -webkit-border-radius: 9px 9px 9px 9px;
+  border-radius: 0.5625em;
+  -moz-border-radius: 0.5625em;
+  -webkit-border-radius: 0.5625em;
   border: none;
-  padding: 15px;
+  padding: 0.9375em;
 }
 
 #forum h1 {
   font-family: Raleway;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 1.25em;
   color: white;
   text-transform: uppercase;
 }
 
 #forum select {
-  font-size: 15px;
+  font-size: 0.9375em;
   text-transform: uppercase;
   border: none;
-  margin-bottom: 40px;
+  margin-bottom: 2.5em;
 }
 
 #forum label {
@@ -278,21 +279,21 @@ main {
   font-weight: 300;
   color: white;
   text-transform: lowercase;
-  font-size: 18px;
+  font-size: 1.125em;
 }
 
 #forum button {
   display: block;
-  margin-top: 15px;
+  margin-top: 0.9375em;
   border: none;
   background-color: #BADA55;
-  border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   color: white;
   text-transform: uppercase;
-  padding: 7px;
-  font-size: 15px;
+  padding: 0.4375em;
+  font-size: 0.9375em;
   font-family: Raleway;
   font-weight: 300;
 }
@@ -315,7 +316,7 @@ article .gender {
   font-size: .8em;
   font-family: Raleway;
   font-weight: 300;
-  margin-top: -10px;
+  margin-top: -0.625em;
 }
 
 article .date {
@@ -323,7 +324,7 @@ article .date {
   font-size: .8em;
   font-family: Raleway;
   font-weight: 300;
-  margin-top: -10px;
+  margin-top: -0.625em;
 }
 
 article .body {
@@ -332,7 +333,7 @@ article .body {
   font-weight: 300;
   background-color: white;
   color: #2A9D8F;
-  padding: 20px;
+  padding: 1.25em;
 }
 
 article .category {
@@ -340,9 +341,9 @@ article .category {
   font-size: .8em;
   font-family: Raleway;
   font-weight: 300;
-  margin-top: 20px;
+  margin-top: 1.25em;
   border-bottom: 2px dotted white;
-  padding-bottom: 20px;
+  padding-bottom: 1.25em;
 }
 
 article .postNum {
@@ -358,17 +359,17 @@ article .postNum {
   width: 90%;
   margin: 0 auto;
   margin-top: 2.5%;
-  border-radius: 9px 9px 9px 9px;
-  -moz-border-radius: 9px 9px 9px 9px;
-  -webkit-border-radius: 9px 9px 9px 9px;
+  border-radius: 0.5625em;
+  -moz-border-radius: 0.5625em;
+  -webkit-border-radius: 0.5625em;
   border: none;
-  padding: 15px;
+  padding: 0.9375em;
 }
 
 #new-reply textarea {
-  border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   border: none;
 }
 
@@ -383,25 +384,25 @@ article .postNum {
 
 #new-reply button {
   display: block;
-  margin-top: 15px;
+  margin-top: 0.9375em;
   border: none;
   background-color: #BADA55;
-  border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   color: white;
   text-transform: uppercase;
-  padding: 7px;
-  font-size: 15px;
+  padding: 0.4375em;
+  font-size: 0.9375em;
   font-family: Raleway;
   font-weight: 300;
 }
 
 #new-reply input {
-  border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
-  line-height: 20px;
+  border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  line-height: 2em;
   border: none;
   width: 42.3%;
 }
@@ -409,7 +410,7 @@ article .postNum {
 #new-reply h1 {
   font-family: Raleway;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 1.25em;
   color: white;
   text-transform: uppercase;
 }
@@ -419,23 +420,23 @@ article .postNum {
   background: #2A9D8F;
   margin: 0 auto;
   margin-top: 2.5%;
-  border-radius: 9px 9px 9px 9px;
-  -moz-border-radius: 9px 9px 9px 9px;
-  -webkit-border-radius: 9px 9px 9px 9px;
+  border-radius: 0.5625em;
+  -moz-border-radius: 0.5625em;
+  -webkit-border-radius: 0.5625em;
   border: none;
-  padding: 15px;
+  padding: 0.9375em;
 }
 
 #resources-form h1 {
   font-family: Raleway;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 1.25em;
   color: white;
   text-transform: uppercase;
 }
 
 #resources-form select {
-  font-size: 15px;
+  font-size: 0.9375em;
   text-transform: uppercase;
   border: none;
 }
@@ -463,11 +464,11 @@ article .postNum {
 }
 
 body {
-  margin-bottom: -10px;
+  margin-bottom: -0.625em;
 }
 
 main {
-  padding-bottom: 100px;
+  padding-bottom: 6.25em;
 }
 
 #mood-form {
@@ -475,11 +476,11 @@ main {
   width: 90%;
   margin: 0 auto;
   margin-top: 2.5%;
-  border-radius: 9px 9px 9px 9px;
-  -moz-border-radius: 9px 9px 9px 9px;
-  -webkit-border-radius: 9px 9px 9px 9px;
+  border-radius: 0.5625em;
+  -moz-border-radius: 0.5625em;
+  -webkit-border-radius: 0.5625em;
   border: none;
-  padding: 15px;
+  padding: 0.9375em;
   line-height: 2em;
   font-family: Raleway;
   font-weight: 300;
@@ -489,15 +490,15 @@ main {
 
 #mood-form button {
   display: block;
-  margin-top: 15px;
+  margin-top: 0.9375em;
   border: none;
   background-color: #BADA55;
-  border-radius: 4px 4px 4px 4px;
-  -moz-border-radius: 4px 4px 4px 4px;
-  -webkit-border-radius: 4px 4px 4px 4px;
+  border-radius: 0.25em;
+  -moz-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   color: white;
   text-transform: uppercase;
-  font-size: 15px;
+  font-size: 0.9375em;
   font-family: Raleway;
   font-weight: 300;
 }
@@ -505,7 +506,7 @@ main {
 #mood-form h1 {
   font-family: Raleway;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 1.25em;
   color: white;
   text-transform: uppercase;
 }
@@ -517,7 +518,7 @@ main {
   text-transform: lowercase;
   font-size: 1.1em;
   display: inline-block;
-  padding-top: 20px;
+  padding-top: 1.25em;
 }
 
 #mood-form input[type="radio"] {
@@ -539,18 +540,18 @@ main {
 @media (min-width: 500px) {
   header h2 {
     font-family: Raleway;
-    font-size: 45px;
+    font-size: 2.8125em;
     color: white;
     text-transform: uppercase;
     font-weight: 300;
-    padding-top: 30px;
+    padding-top: 1.875em;
     margin-left: 35%;
     letter-spacing: .1em;
   }
 
   header h1 {
     font-family: Dancing Script;
-    font-size: 150px;
+    font-size: 9.375em;
     color: white;
     text-transform: lowercase;
     border: 5px solid white;
@@ -562,25 +563,25 @@ main {
 
   header h3 {
     font-family: Raleway;
-    font-size: 45px;
+    font-size: 2.8125em;
     color: white;
     text-transform: uppercase;
     font-weight: 300;
-    padding-top: 30px;
+    padding-top: 2.8125em;
     margin-left: 2%;
     letter-spacing: .1em;
   }
 
   nav ul{
     list-style: none;
-    margin: 0 2px;
+    margin: 0 0.125em;
     padding: 0;
     display: flex;
     justify-content: space-around;
     text-transform: uppercase;
     font-family: Raleway;
-    font-size: 24px;
-    padding: 15px 0px;
+    font-size: 1.5em;
+    padding: 0.9375em 0px;
   }
 
   nav ul a {
@@ -607,7 +608,7 @@ main {
 
   #resources-form h1 {
     display: inline-block;
-    padding-right: 15px;
+    padding-right: 0.9375em;
   }
 
   #resources-form select {
@@ -627,7 +628,7 @@ main {
   }
 
   #column2 {
-    margin-bottom: 50px;
+    margin-bottom: 3.125em;
   }
 
   #new-post button {
@@ -648,22 +649,30 @@ main {
 
   #new-reply textarea{
     width: 43%;
-    line-height: 20px;
+    line-height: 2em;
+    margin-left: 28%;
+
+  }
+  #new-reply input{
+    width: 43%;
+    line-height: 2em;
+    margin-left: 28%;
+
   }
 
   #new-reply {
     width: 70%;
   }
 
-  #formcenter {
+  #existing-user {
     text-align: center;
   }
 
   #new-reply label {
-    text-align: left;
-    margin-left: 28%;
-    padding-bottom: 5px;
-    padding-top: 10px;
+    text-align: center;
+    /*margin-left: 28%;*/
+    padding-bottom: 0.3125em;
+    padding-top: 0.625em;
   }
 
   #resources-form {
@@ -705,14 +714,14 @@ main {
     width: 65%;
   }
 
-  #resourcecenter {
+  /*#resourcecenter {
     width: 90%;
     text-align: center;
-  }
+  }*/
 
   .box {
     padding: 0 7%;
-    margin-top: -20px;
+    margin-top: -1.25em;
   }
 
   #mood-form {
