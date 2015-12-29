@@ -667,6 +667,9 @@ main {
   #existing-user {
     text-align: center;
   }
+  #new-user {
+    text-align: center;
+  }
 
   #new-reply label {
     text-align: center;
@@ -714,10 +717,10 @@ main {
     width: 65%;
   }
 
-  /*#resourcecenter {
+  #resourcecenter {
     width: 90%;
     text-align: center;
-  }*/
+  }
 
   .box {
     padding: 0 7%;
