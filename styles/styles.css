@@ -8,8 +8,8 @@ header {
   background-size: cover;
   padding-bottom: 1.25em;
   margin-top: -2.5em;
-  margin-left: -.5em;
-  margin-right: -.5em;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
 }
 
 header h2 {
@@ -18,7 +18,7 @@ header h2 {
   color: white;
   text-transform: uppercase;
   font-weight: 300;
-  padding-top: 1.875em;
+  /*padding-top: 1.875em;*/
   margin-left: 2%;
   letter-spacing: .1em;
 }
@@ -33,6 +33,7 @@ header h1 {
   padding-right: 10%;
   display: inline-block;
   margin-left: 10%;
+  margin-bottom: -10em;
 }
 
 header h3 {
@@ -41,7 +42,7 @@ header h3 {
   color: white;
   text-transform: uppercase;
   font-weight: 300;
-  padding-top: 1.875em;
+  /*padding-top: 1.875em;*/
   margin-left: 2%;
   letter-spacing: .1em;
 }
