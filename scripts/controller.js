@@ -22,6 +22,7 @@ controller.forum = function() {
   view.showForum();
   login.fillUser();
   Post.pullPost();            // fetch most recent forum data from Firebase
+  $('#' + uidHolder + ' .postedReplies').hide();
   Post.newPost();             // assign event handler for creating new post
   postsView.filterHandler();
   postsView.loadMore();
