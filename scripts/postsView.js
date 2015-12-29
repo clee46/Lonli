@@ -7,9 +7,7 @@ postsView.getTemplate = function() {
 };
 postsView.show = function(post, uid) {
   post.body = marked(post.body);
-  // remove script tags
-  post.body = util.sanitize(post.body);
-
+  post.body = util.sanitize(post.body); // remove script tags
   post.numReplies = post.replies.length;
   var html = postsView.postTemplate(post);
   $('#entries').prepend(html);
@@ -19,7 +17,6 @@ postsView.show = function(post, uid) {
 postsView.replyHandler = function() {
   // clicking on title hides other posts, shows reply form/back button/post replies
   $(document).off('click','.title').on('click', '.title', function(event) {
-    console.log('replyEvent called');
     event.preventDefault();
     var id = $(this).siblings('.postNum').text().slice(6);    // get the post number
     var uid = $(this).parent().attr('id');                    // get the Firebase unique ID
@@ -42,10 +39,9 @@ postsView.replyHandler = function() {
     $('label[for="filter"]').hide();
   });
   // clicking on back button shows all posts, hides reply form/back button/post replies
-  $('#back').on('click', function(event) {
+  $(document).off('click', '#back').on('click', '#back', function(event) {
     event.preventDefault();
     $('#back').hide();              // hide back button
-    // $('.posts').siblings().show();  // show all posts
     postsView.limitPosts();
     $('.postedReplies').hide();     // hide all replies
     $('#new-reply').hide();         // hide reply form
@@ -78,7 +74,7 @@ postsView.limitPosts = function() {
   });
 };
 postsView.loadMore = function() {
-  $('#loadMore').on('click', function(event) {
+  $(document).off('click', '#loadMore').on('click', '#loadMore', function(event) {
     event.preventDefault();
     $('#entries article:hidden').each(function(index, currentElement) {
       if (index < 2){
