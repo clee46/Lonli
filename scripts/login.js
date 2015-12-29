@@ -39,7 +39,7 @@ login.authHandler = function(error, authData) {
     $('#login-status').empty().append('<p>Logged in as: ' + authData.password.email + '<p>');
     currentUserId = authData.uid;
     moodData.getData();
-    if (window.location.href === 'http://localhost:9000/') {
+    if (window.location.href === 'https://lonli.herokuapp.com') {
       page('/forum');
     }
   }

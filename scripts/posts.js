@@ -30,7 +30,7 @@ Post.newPost = function() {
 Post.pullPost = function() {
   postList = [];    // reset the postList
   $('#entries').empty();
-  ref.once('value', function(snapshot) {
+  ref.on('value', function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var uid = childSnapshot.key();
       var temp = new Post(JSON.parse(childSnapshot.val()));
