@@ -28,9 +28,11 @@ Post.newPost = function() {
   });
 };
 Post.pullPost = function() {
-  postList = [];    // reset the postList
-  $('#entries').empty();
+  // postList = [];    // reset the postList
+  // $('#entries').empty();
   ref.on('value', function(snapshot) {
+    postList = [];    // reset the postList
+    $('#entries').empty();
     snapshot.forEach(function(childSnapshot) {
       var uid = childSnapshot.key();
       var temp = new Post(JSON.parse(childSnapshot.val()));
